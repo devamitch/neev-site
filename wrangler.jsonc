@@ -15,13 +15,12 @@
   },
   "workers_dev": true,
   "routes": [
-    { "pattern": "neev.devamit.co.in", "custom_domain": true },
     { "pattern": "neevsanctuary.devamit.co.in", "custom_domain": true }
   ],
   "compatibility_flags": [
     "nodejs_compat"
   ],
   "vars": {
-    "SITE_URL": "https://neev.devamit.co.in"
+    "SITE_URL": "https://neevsanctuary.devamit.co.in"
   }
 }
