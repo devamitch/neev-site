@@ -1,0 +1,108 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  color-scheme: light;
+  --bg: #FAFBF9;
+  --paper: #FAFBF9;
+  --surface: #FFFFFF;
+  --surface2: #F3F5F2;
+  --surface3: #EAF0EB;
+  --surface-glass: rgba(250, 251, 249, 0.88);
+  --surface-card: #FFFFFF;
+
+  --ink: #141F1C;
+  --ink-secondary: #3D4946;
+  --ink-muted: #64736F;
+
+  /* Authentic Pista & Terracotta Harmonies */
+  --pista: #6B856E;
+  --pista-hover: #5A725D;
+  --pista-container: #EAF0EB;
+  --pista-subtle: rgba(107, 133, 110, 0.12);
+
+  --terracotta: #DA7756;
+  --terracotta-hover: #C66747;
+  --terracotta-container: #FDF2EE;
+  --terracotta-subtle: rgba(218, 119, 86, 0.12);
+
+  --dock: #192216;
+  --border: rgba(14, 30, 27, 0.07);
+  --border-strong: rgba(14, 30, 27, 0.12);
+
+  --font-serif: 'Playfair Display', 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Semantic tokens */
+  --background: var(--bg);
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --primary: var(--pista);
+  --primary-foreground: #FFFFFF;
+  --accent: var(--terracotta);
+  --accent-foreground: #FFFFFF;
+  --muted: var(--surface2);
+  --muted-foreground: var(--ink-muted);
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--ink);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Zero shadow flat squircle cards with crisp hairlines */
+.sanctuary-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: none !important;
+}
+
+.sanctuary-card-hover {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: none !important;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.sanctuary-card-hover:hover {
+  border-color: var(--border-strong);
+  background-color: #FEFFFD;
+}
+
+/* Mascot living emotion keyframes */
+@keyframes breathingFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-3px) scale(1.02); }
+}
+
+@keyframes gentleTilt {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(4deg); }
+}
+
+.animate-breathing {
+  animation: breathingFloat 4s ease-in-out infinite;
+}
+
+.animate-tilt {
+  animation: gentleTilt 5s ease-in-out infinite;
+}

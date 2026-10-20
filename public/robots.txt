@@ -1,44 +1,14 @@
-# Neev — robots.txt
-User-agent: *
+User-Agent: *
 Allow: /
-Disallow: /dashboard/
-Disallow: /onboarding
-Disallow: /role-setup
-Disallow: /goals-setup
-Disallow: /google-connect
 Disallow: /api/
+Disallow: /admin/
 
-User-agent: Googlebot
+User-Agent: GPTBot
+User-Agent: ClaudeBot
+User-Agent: PerplexityBot
+User-Agent: Applebot
+User-Agent: Google-Extended
+User-Agent: OAI-SearchBot
 Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-# AI / Answer-engine crawlers
-User-agent: GPTBot
-Allow: /
-User-agent: OAI-SearchBot
-Allow: /
-User-agent: ChatGPT-User
-Allow: /
-User-agent: PerplexityBot
-Allow: /
-User-agent: ClaudeBot
-Allow: /
-User-agent: anthropic-ai
-Allow: /
-User-agent: Google-Extended
-Allow: /
-
-Host: https://neev.devamit.co.in
 
 Sitemap: https://neev.devamit.co.in/sitemap.xml

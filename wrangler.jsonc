@@ -1,7 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "neev-site",
-  "compatibility_date": "2026-04-27",
+  "compatibility_date": "2026-04-26",
   "observability": {
     "enabled": true
   },
@@ -9,13 +9,14 @@
     "command": "pnpm run build"
   },
   "assets": {
-    "directory": "./dist",
-    "not_found_handling": "single-page-application",
+    "directory": "./out",
+    "not_found_handling": "404-page",
     "html_handling": "drop-trailing-slash"
   },
   "workers_dev": true,
   "routes": [
-    { "pattern": "neev.devamit.co.in", "custom_domain": true }
+    { "pattern": "neev.devamit.co.in", "custom_domain": true },
+    { "pattern": "neevsanctuary.devamit.co.in", "custom_domain": true }
   ],
   "compatibility_flags": [
     "nodejs_compat"
