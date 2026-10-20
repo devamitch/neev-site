@@ -4,7 +4,9 @@ import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-route
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import queryClient from "./lib/queryClient";
 
+import AboutPage from "./pages/AboutPage";
 import LandingPage from "./pages/LandingPage";
+import OverviewPage from "./pages/OverviewPage";
 import PrivacyPage from "./pages/PrivacyPage";
 import TermsPage from "./pages/TermsPage";
 
@@ -35,6 +37,26 @@ function AnimatedRoutes() {
           }
         />
 
+        {/* Public Overview & Specification */}
+        <Route
+          path="/overview"
+          element={
+            <PageTransition>
+              <OverviewPage />
+            </PageTransition>
+          }
+        />
+
+        {/* Public About Page */}
+        <Route
+          path="/about"
+          element={
+            <PageTransition>
+              <AboutPage />
+            </PageTransition>
+          }
+        />
+
         {/* Public Legal Pages for Google Verification */}
         <Route
           path="/privacy"
@@ -54,6 +76,14 @@ function AnimatedRoutes() {
         />
         <Route
           path="/terms"
+          element={
+            <PageTransition>
+              <TermsPage />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/terms-of-service"
           element={
             <PageTransition>
               <TermsPage />

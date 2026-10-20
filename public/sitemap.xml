@@ -2,10 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage / Main Sanctuary Showcase -->
   <url>
     <loc>https://neev.devamit.co.in/</loc>
     <lastmod>2026-10-20</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://neev.devamit.co.in/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://neev.devamit.co.in/" />
@@ -16,6 +17,28 @@
       <image:caption>AI-guided family operating system uniting modern Indian joint families.</image:caption>
     </image:image>
   </url>
+
+  <!-- Open Access Product Overview & Architecture -->
+  <url>
+    <loc>https://neev.devamit.co.in/overview</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://neev.devamit.co.in/overview" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://neev.devamit.co.in/overview" />
+  </url>
+
+  <!-- About Neev & Engineering Vision -->
+  <url>
+    <loc>https://neev.devamit.co.in/about</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://neev.devamit.co.in/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://neev.devamit.co.in/about" />
+  </url>
+
+  <!-- Official Google-Compliant Privacy Policy -->
   <url>
     <loc>https://neev.devamit.co.in/privacy-policy</loc>
     <lastmod>2026-10-20</lastmod>
@@ -24,12 +47,18 @@
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://neev.devamit.co.in/privacy-policy" />
     <xhtml:link rel="alternate" hreflang="en" href="https://neev.devamit.co.in/privacy-policy" />
   </url>
+
+  <!-- Privacy Policy Alias -->
   <url>
     <loc>https://neev.devamit.co.in/privacy</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://neev.devamit.co.in/privacy" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://neev.devamit.co.in/privacy" />
   </url>
+
+  <!-- Terms of Service -->
   <url>
     <loc>https://neev.devamit.co.in/terms</loc>
     <lastmod>2026-10-20</lastmod>
@@ -38,10 +67,14 @@
     <xhtml:link rel="alternate" hreflang="en-IN" href="https://neev.devamit.co.in/terms" />
     <xhtml:link rel="alternate" hreflang="en" href="https://neev.devamit.co.in/terms" />
   </url>
+
+  <!-- Terms of Service Alias -->
   <url>
     <loc>https://neev.devamit.co.in/terms-of-service</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en-IN" href="https://neev.devamit.co.in/terms-of-service" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://neev.devamit.co.in/terms-of-service" />
   </url>
 </urlset>
