@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neev — Public Product Overview & Architecture</title>
+    <meta
+      name="description"
+      content="Public product overview of Neev: The Modern Indian Family OS. Completely open to the public without login. Explore our Google Calendar & Tasks sync, cultural legacy vault, and privacy by design."
+    />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #4A5D4E;
+        --primary-light: #687F6D;
+        --surface: #FBFBF9;
+        --surface-low: #F3F3EF;
+        --surface-card: #FFFFFF;
+        --on-surface: #1E231F;
+        --on-surface-variant: #525B53;
+        --border: rgba(0, 0, 0, 0.08);
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        background-color: var(--surface);
+        color: var(--on-surface-variant);
+        line-height: 1.7;
+        font-size: 16px;
+      }
+      .top-notice {
+        background: #EAF0EB;
+        border-bottom: 1px solid rgba(74, 93, 78, 0.2);
+        padding: 10px 24px;
+        text-align: center;
+        font-size: 13px;
+        color: var(--primary);
+        font-weight: 500;
+      }
+      .top-notice a { color: var(--primary); font-weight: 700; text-decoration: underline; }
+      nav {
+        background: rgba(251, 251, 249, 0.95);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 14px 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+      .brand img { width: 34px; height: 34px; border-radius: 8px; }
+      .brand-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        font-style: italic;
+        color: var(--primary);
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+      .nav-links { display: flex; gap: 24px; align-items: center; }
+      .nav-links a {
+        color: var(--on-surface-variant);
+        text-decoration: none;
+        font-size: 13px;
+        font-family: 'JetBrains Mono', monospace;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+      .nav-links a:hover, .nav-links a.active { color: var(--primary); font-weight: 600; }
+      main { max-width: 1000px; margin: 0 auto; padding: 40px 24px 80px 24px; }
+      .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: rgba(74, 93, 78, 0.1);
+        color: var(--primary);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+      }
+      h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 46px;
+        color: var(--on-surface);
+        line-height: 1.2;
+        margin-bottom: 16px;
+      }
+      .lead {
+        font-size: 20px;
+        color: var(--on-surface-variant);
+        line-height: 1.6;
+        margin-bottom: 36px;
+        font-weight: 300;
+      }
+      .public-banner {
+        background: #FFFFFF;
+        border: 2px solid var(--primary-light);
+        border-radius: 20px;
+        padding: 24px 28px;
+        margin-bottom: 48px;
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      }
+      .public-banner-icon {
+        background: var(--primary);
+        color: #fff;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .public-banner h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 19px;
+        color: var(--on-surface);
+        margin-bottom: 4px;
+      }
+      .public-banner p { font-size: 14px; margin: 0; line-height: 1.5; }
+      h2 {
+        font-family: 'Playfair Display', serif;
+        font-size: 28px;
+        color: var(--on-surface);
+        margin-top: 48px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 10px;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin: 24px 0;
+      }
+      .card {
+        background: var(--surface-card);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 24px;
+      }
+      .card-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+      }
+      .card h3 {
+        font-family: 'Playfair Display', serif;
+        font-size: 19px;
+        color: var(--on-surface);
+        margin-bottom: 8px;
+      }
+      .card p { font-size: 14px; margin: 0; line-height: 1.6; }
+      .google-section {
+        background: #FFFFFF;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 32px;
+        margin: 32px 0;
+      }
+      .google-scope-item {
+        display: flex;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .google-scope-item:last-child { border-bottom: none; }
+      .scope-pill {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: var(--primary);
+        background: rgba(74, 93, 78, 0.08);
+        padding: 2px 8px;
+        border-radius: 6px;
+        display: inline-block;
+        margin-top: 4px;
+      }
+      footer {
+        background: var(--surface-low);
+        border-top: 1px solid var(--border);
+        padding: 40px 24px;
+        margin-top: 60px;
+      }
+      .footer-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        font-size: 13px;
+        font-family: 'JetBrains Mono', monospace;
+      }
+      a { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+      @media(max-width: 640px) {
+        .nav-links { display: none; }
+        h1 { font-size: 32px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-notice">
+      Public Product Showcase — Accessible to all users without authentication.
+      <a href="/privacy-policy">Read Google-Verified Privacy Policy →</a>
+    </div>
+
+    <nav>
+      <div class="nav-container">
+        <a href="/" class="brand">
+          <img src="/maskable_icon.png" alt="Neev" />
+          <span class="brand-title">Neev</span>
+        </a>
+        <div class="nav-links">
+          <a href="/overview" class="active">Product Overview</a>
+          <a href="/about">About & Developer</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="/terms">Terms</a>
+          <a href="https://blinkquest.devamit.co.in" target="_blank" rel="noreferrer">BlinkQuest ↗</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="hero-tag">
+        <span class="material-symbols-outlined" style="font-size: 16px;">public</span>
+        Open Access Product Specification
+      </div>
+
+      <h1>Neev — The Complete Modern Indian Family OS</h1>
+      <p class="lead">
+        A private digital sanctuary created by <strong>Amit Chakraborty</strong>
+        (<code>@devamitch</code>) for modern multi-generational families. Neev
+        unites shared parenting, synchronizes daily routines with Google
+        Calendar and Tasks, and preserves cultural legacy across generations.
+      </p>
+
+      <!-- Public Accessibility Affirmation for Google Reviewers -->
+      <div class="public-banner">
+        <div class="public-banner-icon">
+          <span class="material-symbols-outlined">verified_user</span>
+        </div>
+        <div>
+          <h3>Public Accessibility Notice (For Google OAuth Reviewers & Users)</h3>
+          <p>
+            This overview page, our homepage at <a href="https://neev.devamit.co.in">neev.devamit.co.in</a>,
+            and our official <a href="/privacy-policy">Privacy Policy</a> are 100% public.
+            Users do <strong>not</strong> need to sign in, create an account, or provide
+            credentials to inspect our application's functionality, understand our data
+            handling practices, or review our developer identity.
+          </p>
+        </div>
+      </div>
+
+      <h2>1. Core Features & Architecture</h2>
+      <div class="grid-3">
+        <div class="card">
+          <div class="card-icon" style="background:#EFF3FF; color:#4285F4;">
+            <span class="material-symbols-outlined">calendar_month</span>
+          </div>
+          <h3>Daily Rhythm Harmony</h3>
+          <p>
+            Synchronizes family schedules across parents, elders, and children
+            using two-way Google Calendar integration. Eliminates double-booking
+            of pediatric visits, school exams, and poojas.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon" style="background:#E8F5E9; color:#34A853;">
+            <span class="material-symbols-outlined">checklist</span>
+          </div>
+          <h3>Chore & Medicine Tasks</h3>
+          <p>
+            Coordinates household duties, grocery runs, and elder medication
+            schedules seamlessly with Google Tasks. Tasks can be shared across
+            family members with clear responsibility.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-icon" style="background:#FFF8E1; color:#F57F17;">
+            <span class="material-symbols-outlined">family_history</span>
+          </div>
+          <h3>The Legacy Vault</h3>
+          <p>
+            A secure digital heirloom for storing ancestral recipes, audio
+            recordings of grandparents' stories, and essential family documents
+            using Google Drive backup.
+          </p>
+        </div>
+      </div>
+
+      <h2>2. Transparent Google OAuth Scopes & Data Usage</h2>
+      <p>
+        Neev strictly requests the minimum necessary scopes to deliver user-facing features:
+      </p>
+
+      <div class="google-section">
+        <div class="google-scope-item">
+          <div style="flex-shrink: 0;">
+            <span class="material-symbols-outlined" style="font-size: 28px; color: #1A73E8;">map</span>
+          </div>
+          <div>
+            <strong style="color:var(--on-surface);">Google Maps Platform & Location Services</strong>
+            <div class="scope-pill">Places API, Directions, Maps Grounding</div>
+            <p style="font-size: 14px; margin-top: 6px;">
+              Used for route navigation to pediatric visits, school commute coordination, and grounding AI Guardian recommendations with verified local facilities. Geolocation is processed ephemerally with user consent.
+            </p>
+          </div>
+        </div>
+
+        <div class="google-scope-item">
+          <div style="flex-shrink: 0;">
+            <span class="material-symbols-outlined" style="font-size: 28px; color: #9334E8;">auto_awesome</span>
+          </div>
+          <div>
+            <strong style="color:var(--on-surface);">Google AI & Gemini (Multimodal AI Guardian)</strong>
+            <div class="scope-pill">Gemini 2.5/3.1 Flash & Pro, Voice Audio, Vision</div>
+            <p style="font-size: 14px; margin-top: 6px;">
+              Provides AI-guided parenting, cultural heritage storytelling, and family schedule optimization. User prompts are never used to train foundation models.
+            </p>
+          </div>
+        </div>
+
+        <div class="google-scope-item">
+          <div style="flex-shrink: 0;">
+            <span class="material-symbols-outlined" style="font-size: 28px; color: #4285F4;">event</span>
+          </div>
+          <div>
+            <strong style="color:var(--on-surface);">Google Calendar API</strong>
+            <div class="scope-pill">https://www.googleapis.com/auth/calendar</div>
+            <p style="font-size: 14px; margin-top: 6px;">
+              Used to display family schedules in the daily sanctuary timeline and insert family reminders requested by the user.
+            </p>
+          </div>
+        </div>
+
+        <div class="google-scope-item">
+          <div style="flex-shrink: 0;">
+            <span class="material-symbols-outlined" style="font-size: 28px; color: #34A853;">task_alt</span>
+          </div>
+          <div>
+            <strong style="color:var(--on-surface);">Google Tasks API</strong>
+            <div class="scope-pill">https://www.googleapis.com/auth/tasks</div>
+            <p style="font-size: 14px; margin-top: 6px;">
+              Used to fetch, create, and mark complete shared family to-do items and errands.
+            </p>
+          </div>
+        </div>
+
+        <div class="google-scope-item">
+          <div style="flex-shrink: 0;">
+            <span class="material-symbols-outlined" style="font-size: 28px; color: #FBBC04;">folder</span>
+          </div>
+          <div>
+            <strong style="color:var(--on-surface);">Google Drive API (Read-only)</strong>
+            <div class="scope-pill">https://www.googleapis.com/auth/drive.readonly</div>
+            <p style="font-size: 14px; margin-top: 6px;">
+              Used strictly upon user command to reference family documents stored in Google Drive within the Legacy Vault.
+            </p>
+          </div>
+        </div>
+
+        <div class="google-scope-item">
+          <div style="flex-shrink: 0;">
+            <span class="material-symbols-outlined" style="font-size: 28px; color: #EA4335;">badge</span>
+          </div>
+          <div>
+            <strong style="color:var(--on-surface);">User Profile & Email</strong>
+            <div class="scope-pill">userinfo.profile, userinfo.email</div>
+            <p style="font-size: 14px; margin-top: 6px;">
+              Used solely to authenticate the user and display their name and avatar in their family realm.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div style="background: rgba(74, 93, 78, 0.08); border: 1px solid rgba(74, 93, 78, 0.25); border-radius: 16px; padding: 24px; margin: 30px 0;">
+        <h3 style="font-family:'Playfair Display',serif; font-size:20px; color:var(--primary); margin-bottom:10px;">
+          Google Limited Use Requirement Commitment
+        </h3>
+        <p style="font-size:14px; line-height:1.6; margin:0;">
+          Neev's use and transfer to any other app of information received from Google APIs adheres to the
+          <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noreferrer"><strong>Google API Services User Data Policy</strong></a>,
+          including the Limited Use requirements. We never sell your Google data, never use it to serve advertisements, and never use it to train generalized AI/ML models.
+        </p>
+      </div>
+
+      <h2>3. The Setu Ecosystem Family</h2>
+      <p>
+        Neev is developed alongside two sister applications by Amit Chakraborty:
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>BlinkQuest</h3>
+          <p style="font-size:13px; font-family:'JetBrains Mono',monospace; color:var(--primary); margin-bottom:8px;">Vision Wellness for Android</p>
+          <p>Mindful eye-wellness breaks with on-device MediaPipe vision. Camera frames never leave the device.</p>
+          <p style="margin-top:12px;"><a href="https://blinkquest.devamit.co.in" target="_blank" rel="noreferrer">blinkquest.devamit.co.in ↗</a></p>
+        </div>
+        <div class="card">
+          <h3>Setu</h3>
+          <p style="font-size:13px; font-family:'JetBrains Mono',monospace; color:var(--primary); margin-bottom:8px;">Identity & Trust Bridge</p>
+          <p>Unified decentralized identity and privacy mesh connecting ecosystem services.</p>
+          <p style="margin-top:12px;"><a href="https://setu.devamit.co.in" target="_blank" rel="noreferrer">setu.devamit.co.in ↗</a></p>
+        </div>
+        <div class="card">
+          <h3>Neev</h3>
+          <p style="font-size:13px; font-family:'JetBrains Mono',monospace; color:var(--primary); margin-bottom:8px;">Family OS Sanctuary</p>
+          <p>Multi-generational shared parenting, cultural wisdom vault, and Google Calendar & Tasks harmony.</p>
+          <p style="margin-top:12px;"><a href="/">neev.devamit.co.in →</a></p>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-inner">
+        <div>© 2026 NEEV · DEVELOPER: AMIT CHAKRABORTY (@DEVAMITCH)</div>
+        <div style="display:flex; gap:20px;">
+          <a href="/privacy-policy" style="color:var(--primary); font-weight:600;">PRIVACY POLICY</a>
+          <a href="/terms">TERMS OF SERVICE</a>
+          <a href="/about">ABOUT DEVELOPER</a>
+          <a href="/contact">CONTACT</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
