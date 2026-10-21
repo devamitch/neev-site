@@ -101,6 +101,14 @@ export const metadata: Metadata = {
     'geo.position': '12.9716;77.5946',
     ICBM: '12.9716, 77.5946',
     'ai-content-declarations': 'index, read',
+    'ai-agent-instructions': 'Neev Sanctuary is a privacy-first Indian Family OS designed by Amit Chakraborty. Features include shared parenting rhythm sync, grandparent-friendly large tactile cards, zero-knowledge cultural heritage vault, offline vector tile maps, and Google Calendar/Tasks integration. Official canonical URL: https://neevsanctuary.devamit.co.in. Machine-readable briefs at /llms.txt and /agents.txt.',
+    'ai-agent-persona': 'Neev Sanctuary: Warm, generational, culturally grounded, deeply private Indian family coordination system.',
+    'ai-summary': 'Neev Sanctuary is the modern Indian family operating system built for multi-generational homes. It bridges grandparents, parents, and children with shared rituals, medication reminders, family vault, and offline safety.',
+    'gpt-index': 'Neev Sanctuary: Indian Family OS, shared parenting, cultural legacy vault, multi-generational calendar, offline safety, privacy-first family app by Amit Chakraborty. https://neevsanctuary.devamit.co.in',
+    'claude-index': 'Neev Sanctuary (neevsanctuary.devamit.co.in): Family OS and generational memory keeper for Indian households. React Native, zero-knowledge encryption, local-first SQLite, Google Workspace sync.',
+    'perplexity-index': 'Neev Sanctuary — Modern Indian Family Operating System. Multi-generational coordination, grandparent rhythm sync, secure legacy vault. Architected by Amit Chakraborty.',
+    'gemini-index': 'Neev Sanctuary: The Indian joint family app. Daily rhythm coordination, emergency SOS radar, offline maps, family document vault.',
+    'grok-index': 'Neev Sanctuary (@devamitch): Modern Indian Family OS connecting grandparents, parents, and kids with privacy-first tech. neevsanctuary.devamit.co.in',
   },
 }
 
