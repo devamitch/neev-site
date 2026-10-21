@@ -47,7 +47,7 @@ const screens = [
     highlights: [
       'Lossless audio recording with visual waveform player',
       'Private family archive not shared with any third party',
-      'Optional 1-click backup to private Google Drive (drive.file)',
+      'Local encrypted backup with hardware keystore security',
     ],
   },
   {
@@ -82,8 +82,60 @@ const screens = [
   },
 ]
 
+const DESIGN_BOARDS = [
+  {
+    id: 'b1',
+    boardNum: 'Board 01',
+    title: 'Complete Screen Gallery',
+    category: 'Design System & Squircles',
+    desc: 'High-fidelity layout of all native porcelain screens, raised-cosine bottom docks, and living sprout mascot states.',
+    src: '/assets/screens/01_complete_screen_gallery.png',
+  },
+  {
+    id: 'b2',
+    boardNum: 'Board 02',
+    title: 'Full Navigation & App Flow',
+    category: 'Information Architecture',
+    desc: 'Hierarchical navigation board showing elder-to-child perspective routing, bottom sheet modals, and PIP transitions.',
+    src: '/assets/screens/02_full_app_and_navigation_board.png',
+  },
+  {
+    id: 'b3',
+    boardNum: 'Board 03',
+    title: 'App Flow & Screen Inventory',
+    category: 'Lifecycle & State Machines',
+    desc: 'End-to-end navigational hierarchy, multi-generational perspective switching, and family invitation lifecycle.',
+    src: '/assets/screens/03_app_flow_and_screen_inventory.png',
+  },
+  {
+    id: 'b4',
+    boardNum: 'Board 04',
+    title: 'Detailed Screen Library',
+    category: 'Micro-Interactions & Haptics',
+    desc: 'Deep-dive component library with Fraunces serif typography, Pista and Terracotta palette harmonies, and tactile chips.',
+    src: '/assets/screens/04_detailed_screen_library.png',
+  },
+  {
+    id: 'b5',
+    boardNum: 'Board 05',
+    title: 'Features & PIP States',
+    category: 'Spatial Telemetry & Audio',
+    desc: 'Floating mini-player radar, persistent ritual countdown timer, and background acoustic chirp telemetry.',
+    src: '/assets/screens/05_features_and_pip_states.png',
+  },
+  {
+    id: 'b7',
+    boardNum: 'Board 06',
+    title: 'Product Design Masterboard',
+    category: 'Full Production Spec',
+    desc: 'Full product overview showcasing the living hearth, Pan-Indian panchang engine, and encrypted Sanskriti vault.',
+    src: '/assets/screens/07_full_product_and_pip_design_board.png',
+  },
+]
+
 export function ScreensShowcase() {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [activeBoardModal, setActiveBoardModal] = useState<typeof DESIGN_BOARDS[0] | null>(null)
   const activeScreen = screens[activeIndex]
 
   return (
@@ -177,77 +229,109 @@ export function ScreensShowcase() {
         </div>
 
         {/* Extended System Architecture & Design Boards Gallery */}
-        <div className="mt-20 pt-16 border-t border-[var(--border)]">
+        <div className="mt-24 pt-16 border-t border-[var(--border)]">
           <div className="max-w-2xl mb-10 text-left">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--surface2)] text-[var(--terracotta)] text-xs font-mono uppercase tracking-wider mb-3 border border-[var(--border)]">
               <Sliders className="w-3.5 h-3.5" />
-              <span>Complete Design System &amp; Architecture</span>
+              <span>Engineering Blueprint &amp; Screen Inventory</span>
             </div>
             <h3 className="font-serif text-2xl sm:text-4xl font-bold tracking-tight text-[var(--ink)] mb-3">
-              Screen Inventory &amp; App Architecture Boards
+              Production Architecture &amp; Design Masterboards
             </h3>
             <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
-              Explore the full system architecture of Neev Sanctuary — including multi-perspective routing, Picture-in-Picture (PIP) states, panchang ritual scheduling, and local-first cryptographic vaults.
+              Click on any board to expand in full-resolution zoom. Inspect the complete system architecture of Neev Sanctuary — including multi-perspective routing, Picture-in-Picture (PIP) states, panchang ritual scheduling, and local-first cryptographic vaults.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="sanctuary-card p-4 rounded-2xl group hover:border-[var(--border-strong)] transition-all flex flex-col justify-between">
-              <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[var(--surface2)] border border-[var(--border)] mb-3">
-                <img
-                  src="/assets/screens/01_complete_screen_gallery.png"
-                  alt="Complete Screen Gallery"
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
+            {DESIGN_BOARDS.map((board) => (
+              <div
+                key={board.id}
+                onClick={() => setActiveBoardModal(board)}
+                className="sanctuary-card p-4 rounded-2xl group hover:border-[var(--pista)] transition-all flex flex-col justify-between cursor-pointer hover:-translate-y-1"
+              >
+                <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[var(--surface2)] border border-[var(--border)] mb-3">
+                  <img
+                    src={board.src}
+                    alt={board.title}
+                    className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-colors flex items-center justify-center">
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity px-3 py-1.5 rounded-full bg-white/95 text-[11px] font-semibold text-[var(--ink)] shadow-md flex items-center gap-1.5">
+                      <Sparkles className="w-3 h-3 text-[var(--terracotta)]" />
+                      <span>Click to Zoom</span>
+                    </span>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-[10px] font-mono text-[var(--terracotta)] uppercase font-bold">
+                      {board.boardNum}
+                    </span>
+                    <span className="text-[9px] font-mono text-[var(--ink-muted)] px-2 py-0.5 rounded bg-[var(--surface2)]">
+                      {board.category}
+                    </span>
+                  </div>
+                  <h4 className="font-serif text-base font-bold text-[var(--ink)] mb-1 group-hover:text-[var(--pista-hover)] transition-colors">
+                    {board.title}
+                  </h4>
+                  <p className="text-xs text-[var(--ink-secondary)] leading-relaxed line-clamp-2">
+                    {board.desc}
+                  </p>
+                </div>
               </div>
-              <div>
-                <span className="text-[10px] font-mono text-[var(--pista-hover)] uppercase font-bold block mb-1">Board 01</span>
-                <h4 className="font-serif text-base font-bold text-[var(--ink)] mb-1">Complete Screen Gallery</h4>
-                <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
-                  High-fidelity layout of all native porcelain screens, raised-cosine bottom docks, and living sprout mascot states.
-                </p>
-              </div>
-            </div>
-
-            <div className="sanctuary-card p-4 rounded-2xl group hover:border-[var(--border-strong)] transition-all flex flex-col justify-between">
-              <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[var(--surface2)] border border-[var(--border)] mb-3">
-                <img
-                  src="/assets/screens/03_app_flow_and_screen_inventory.png"
-                  alt="App Flow and Screen Inventory"
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <span className="text-[10px] font-mono text-[var(--terracotta)] uppercase font-bold block mb-1">Board 02</span>
-                <h4 className="font-serif text-base font-bold text-[var(--ink)] mb-1">App Flow &amp; Screen Inventory</h4>
-                <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
-                  End-to-end navigational hierarchy, multi-generational perspective switching, and family invitation lifecycle.
-                </p>
-              </div>
-            </div>
-
-            <div className="sanctuary-card p-4 rounded-2xl group hover:border-[var(--border-strong)] transition-all flex flex-col justify-between">
-              <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[var(--surface2)] border border-[var(--border)] mb-3">
-                <img
-                  src="/assets/screens/05_features_and_pip_states.png"
-                  alt="Features and PIP States"
-                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <span className="text-[10px] font-mono text-[var(--pista-hover)] uppercase font-bold block mb-1">Board 03</span>
-                <h4 className="font-serif text-base font-bold text-[var(--ink)] mb-1">Features &amp; PIP States</h4>
-                <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
-                  Floating mini-player radar, persistent ritual countdown timer, and background acoustic chirp telemetry.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Full-Screen High-Resolution Lightbox Modal */}
+      {activeBoardModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 sm:p-8 animate-fadeIn"
+          onClick={() => setActiveBoardModal(null)}
+        >
+          <div
+            className="relative max-w-6xl w-full max-h-[92vh] bg-[var(--surface)] rounded-3xl border border-white/20 p-4 sm:p-6 overflow-hidden flex flex-col shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between pb-4 border-b border-[var(--border)] mb-4">
+              <div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[var(--terracotta)] font-bold block">
+                  {activeBoardModal.boardNum} · {activeBoardModal.category}
+                </span>
+                <h3 className="font-serif text-lg sm:text-2xl font-bold text-[var(--ink)]">
+                  {activeBoardModal.title}
+                </h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setActiveBoardModal(null)}
+                className="px-4 py-2 rounded-full bg-[var(--surface2)] hover:bg-[var(--surface3)] text-xs font-semibold text-[var(--ink)] transition-colors"
+              >
+                Close &times;
+              </button>
+            </div>
+
+            {/* Modal Image Body with Natural Aspect Ratio */}
+            <div className="flex-1 overflow-auto rounded-2xl bg-[#0D1210] p-2 flex items-center justify-center">
+              <img
+                src={activeBoardModal.src}
+                alt={activeBoardModal.title}
+                className="max-h-[75vh] w-auto max-w-full object-contain rounded-xl"
+              />
+            </div>
+
+            {/* Modal Footer */}
+            <div className="pt-3 flex items-center justify-between text-xs text-[var(--ink-secondary)]">
+              <span>{activeBoardModal.desc}</span>
+              <span className="font-mono text-[10px] text-[var(--pista-hover)] font-bold">100% Native Architecture</span>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }

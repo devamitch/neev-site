@@ -1,7 +1,23 @@
-'use client'
+'use client';
 
-import { useState } from 'react'
-import { Calendar, CheckSquare, ShieldCheck, Lock, ArrowRight, RefreshCw, CheckCircle2, Sparkles, ExternalLink } from 'lucide-react'
+import { useState } from 'react';
+import {
+  Calendar,
+  CheckSquare,
+  ShieldCheck,
+  Lock,
+  ArrowRight,
+  RefreshCw,
+  CheckCircle2,
+  Sparkles,
+  ExternalLink,
+  Code,
+  Terminal,
+  Activity,
+  Layers,
+  Eye,
+  Check
+} from 'lucide-react';
 
 export function GoogleSyncInteractiveDemo() {
   const presets = [
@@ -16,6 +32,19 @@ export function GoogleSyncInteractiveDemo() {
       taskScope: 'https://www.googleapis.com/auth/tasks',
       assignee: 'Co-Parents & Grandparents',
       sanitization: 'Zero medical or biometric context included.',
+      jsonPayload: {
+        summary: 'Diwali Lakshmi Puja & Family Aarti',
+        description: 'Panchang Muhurat calculated locally. Deep Daan at Sunset.',
+        start: { dateTime: '2026-11-08T18:45:00+05:30' },
+        end: { dateTime: '2026-11-08T19:30:00+05:30' },
+        extendedProperties: {
+          private: {
+            sanctuary_id: 'neev_kutumb_blr_01',
+            client_verification: 'LIMITED_USE_COMPLIANT',
+            ai_training_exempt: 'TRUE'
+          }
+        }
+      }
     },
     {
       id: 'health',
@@ -28,6 +57,22 @@ export function GoogleSyncInteractiveDemo() {
       taskScope: 'https://www.googleapis.com/auth/tasks',
       assignee: 'Dad (Assigned in Google Tasks)',
       sanitization: 'Health records remain local; only appointment time and hospital location exported.',
+      jsonPayload: {
+        summary: 'Dr. Banerjee Follow-up · Manipal Hospital',
+        location: 'Old Airport Rd, Kodihalli, Bengaluru',
+        start: { dateTime: '2026-10-24T10:30:00+05:30' },
+        end: { dateTime: '2026-10-24T11:15:00+05:30' },
+        reminders: {
+          useDefault: false,
+          overrides: [{ method: 'popup', minutes: 45 }]
+        },
+        extendedProperties: {
+          private: {
+            pii_sanitized: 'TRUE',
+            medical_diagnosis_redacted: 'TRUE'
+          }
+        }
+      }
     },
     {
       id: 'pediatric',
@@ -40,20 +85,27 @@ export function GoogleSyncInteractiveDemo() {
       taskScope: 'https://www.googleapis.com/auth/tasks',
       assignee: 'Mom & Dad (Shared Checklist)',
       sanitization: 'Child’s biometric identifiers completely excluded.',
+      jsonPayload: {
+        title: 'Pay Quarter 3 Transport & Activity Fee',
+        due: '2026-10-28T23:59:00+05:30',
+        notes: 'Co-parent joint school account checklist. Zero child tracking data attached.',
+        status: 'needsAction'
+      }
     },
-  ]
+  ];
 
-  const [selectedId, setSelectedId] = useState('festival')
-  const [syncStatus, setSyncStatus] = useState<'idle' | 'syncing' | 'synced'>('idle')
+  const [selectedId, setSelectedId] = useState('festival');
+  const [syncStatus, setSyncStatus] = useState<'idle' | 'syncing' | 'synced'>('idle');
+  const [showJsonInspector, setShowJsonInspector] = useState(false);
 
-  const current = presets.find((p) => p.id === selectedId) || presets[0]
+  const current = presets.find((p) => p.id === selectedId) || presets[0];
 
   const handleSimulateSync = () => {
-    setSyncStatus('syncing')
+    setSyncStatus('syncing');
     setTimeout(() => {
-      setSyncStatus('synced')
-    }, 1200)
-  }
+      setSyncStatus('synced');
+    }, 1200);
+  };
 
   return (
     <section className="py-16 scroll-mt-20">
@@ -68,36 +120,50 @@ export function GoogleSyncInteractiveDemo() {
             Google Workspace Bi-Directional Synchronizer
           </h2>
           <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
-            See how sacred Indian rituals, elder medical appointments, and shared parenting chores flow safely into your personal Google Calendar and Google Tasks without leaking sensitive family data.
+            See how sacred Indian rituals, elder medical appointments, and shared parenting chores flow safely into your personal Google Calendar and Google Tasks without leaking sensitive family records.
           </p>
         </div>
 
         {/* Preset Selector Chips */}
-        <div className="flex flex-wrap items-center gap-2 mb-8">
-          {presets.map((preset) => (
-            <button
-              key={preset.id}
-              onClick={() => {
-                setSelectedId(preset.id)
-                setSyncStatus('idle')
-              }}
-              className={`px-4 py-2 rounded-full text-xs font-medium transition-all ${
-                selectedId === preset.id
-                  ? 'bg-[var(--pista)] text-white shadow-none font-semibold'
-                  : 'bg-[var(--surface2)] text-[var(--ink-secondary)] hover:bg-[var(--surface3)]'
-              }`}
-            >
-              <span>{preset.label}</span>
-            </button>
-          ))}
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-8">
+          <div className="flex flex-wrap items-center gap-2">
+            {presets.map((preset) => (
+              <button
+                key={preset.id}
+                type="button"
+                onClick={() => {
+                  setSelectedId(preset.id);
+                  setSyncStatus('idle');
+                }}
+                className={`px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
+                  selectedId === preset.id
+                    ? 'bg-[var(--pista)] text-white shadow-xs'
+                    : 'bg-[var(--surface2)] text-[var(--ink-secondary)] hover:bg-[var(--surface3)]'
+                }`}
+              >
+                <span>{preset.label}</span>
+              </button>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={() => setShowJsonInspector(!showJsonInspector)}
+            className="px-3 py-1.5 rounded-full text-xs font-mono text-[var(--ink-secondary)] bg-[var(--surface)] border border-[var(--border)] hover:border-[var(--border-strong)] flex items-center gap-1.5 cursor-pointer"
+          >
+            <Code className="w-3.5 h-3.5 text-[var(--terracotta)]" />
+            <span>{showJsonInspector ? 'Hide Raw JSON' : 'Inspect Clean Payload'}</span>
+          </button>
         </div>
 
         {/* 3-Step Pipeline Flow */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 relative">
           {/* Step 1: On-Device Sovereign Origin */}
-          <div className="p-5 rounded-2xl bg-[var(--surface2)] border border-[var(--border)] space-y-3">
+          <div className={`p-5 rounded-2xl bg-[var(--surface2)] border transition-all ${
+            syncStatus === 'syncing' ? 'border-[var(--pista)] scale-[1.01]' : 'border-[var(--border)]'
+          } space-y-3`}>
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-[var(--pista)] font-bold">
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[var(--pista-hover)] font-bold">
                 Step 1: Origin
               </span>
               <Lock className="w-4 h-4 text-[var(--pista)]" />
@@ -115,7 +181,9 @@ export function GoogleSyncInteractiveDemo() {
           </div>
 
           {/* Step 2: Context Sanitizer Boundary */}
-          <div className="p-5 rounded-2xl bg-[var(--surface2)] border border-[var(--border)] space-y-3">
+          <div className={`p-5 rounded-2xl bg-[var(--surface2)] border transition-all ${
+            syncStatus === 'syncing' ? 'border-[var(--terracotta)] scale-[1.01]' : 'border-[var(--border)]'
+          } space-y-3`}>
             <div className="flex items-center justify-between">
               <span className="text-[10px] font-mono uppercase tracking-wider text-[var(--terracotta)] font-bold">
                 Step 2: Sanitizer
@@ -136,98 +204,76 @@ export function GoogleSyncInteractiveDemo() {
           </div>
 
           {/* Step 3: Google Workspace Destination */}
-          <div className="p-5 rounded-2xl bg-[var(--surface2)] border border-[var(--border)] space-y-3">
+          <div className={`p-5 rounded-2xl bg-[var(--surface2)] border transition-all ${
+            syncStatus === 'synced' ? 'border-[var(--pista)] ring-2 ring-[var(--pista)]/20' : 'border-[var(--border)]'
+          } space-y-3`}>
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-mono uppercase tracking-wider text-[var(--ink)] font-bold">
-                Step 3: Google Export
+              <span className="text-[10px] font-mono uppercase tracking-wider text-[var(--pista-hover)] font-bold">
+                Step 3: Google Workspace
               </span>
-              <Calendar className="w-4 h-4 text-[var(--ink)]" />
+              <Calendar className="w-4 h-4 text-[var(--pista)]" />
             </div>
             <h4 className="font-serif text-sm font-bold text-[var(--ink)]">
-              Google Calendar &amp; Tasks
+              Target Calendar &amp; Tasks
             </h4>
             <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
-              Exported via official OAuth2 scopes with user authorization. Synchronizes directly to personal Google accounts.
+              Authorized via standard OAuth 2.0. Exported directly into your personal Google account with no third-party data broker access.
             </p>
-            <div className="p-2.5 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[10px] font-mono space-y-1">
-              <p className="text-[var(--pista)]">Scope: calendar.events</p>
-              <p className="text-[var(--terracotta)]">Scope: tasks</p>
+            <div className="p-2.5 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-[11px] font-mono space-y-1">
+              <p className="text-[var(--pista-hover)] font-semibold truncate"><strong>Scope:</strong> {current.googleScope}</p>
+              <p className="text-[var(--ink)]"><strong>Assigned:</strong> {current.assignee}</p>
             </div>
           </div>
         </div>
 
-        {/* Action & Result Preview */}
-        <div className="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="space-y-1 text-left w-full sm:w-auto">
-            <span className="text-xs font-bold text-[var(--ink)] block">
-              Test Synchronization Pipeline
-            </span>
-            <p className="text-xs text-[var(--ink-secondary)]">
-              Simulate how Neev synchronizes &ldquo;{current.eventTitle}&rdquo; into your Google ecosystem.
-            </p>
+        {/* JSON Payload Inspector Drawer */}
+        {showJsonInspector && (
+          <div className="mb-8 p-4 rounded-2xl bg-[var(--dock)] text-white border border-white/10 font-mono text-xs overflow-x-auto animate-fadeIn">
+            <div className="flex items-center justify-between pb-2 mb-3 border-b border-white/10 text-[11px] text-white/70">
+              <span className="text-[var(--pista)] font-bold flex items-center gap-1.5">
+                <Terminal className="w-3.5 h-3.5" />
+                Sanitized Outbound OAuth Payload (Zero Biometrics / Zero AI Training)
+              </span>
+              <span className="text-white/40">JSON · Content-Type: application/json</span>
+            </div>
+            <pre className="text-[11px] leading-relaxed text-emerald-300">
+              {JSON.stringify(current.jsonPayload, null, 2)}
+            </pre>
+          </div>
+        )}
+
+        {/* Action & Feedback Footer */}
+        <div className="pt-6 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="text-xs text-[var(--ink-secondary)] text-center sm:text-left">
+            <span className="font-bold text-[var(--ink)] block sm:inline">Verification Compliance: </span>
+            <span>Adheres strictly to the Google API Services User Data Policy, including Limited Use.</span>
           </div>
 
           <button
+            type="button"
             onClick={handleSimulateSync}
             disabled={syncStatus === 'syncing'}
-            className="w-full sm:w-auto px-6 py-3 rounded-full bg-[var(--ink)] text-white text-xs font-semibold hover:bg-[var(--ink-secondary)] transition-all flex items-center justify-center gap-2 shrink-0 shadow-none disabled:opacity-50"
+            className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[var(--pista)] hover:bg-[var(--pista-hover)] text-white text-xs font-semibold transition-all flex items-center justify-center gap-2 shadow-xs cursor-pointer active:scale-95 disabled:opacity-50"
           >
             {syncStatus === 'syncing' ? (
               <>
-                <RefreshCw className="w-4 h-4 animate-spin text-[var(--pista)]" />
-                <span>Sanitizing &amp; Syncing...</span>
+                <RefreshCw className="w-4 h-4 animate-spin" />
+                <span>Simulating OAuth 2.0 Pipeline...</span>
               </>
             ) : syncStatus === 'synced' ? (
               <>
-                <CheckCircle2 className="w-4 h-4 text-[var(--pista)]" />
-                <span>Synced to Google Successfully!</span>
+                <CheckCircle2 className="w-4 h-4 text-white" />
+                <span>Synchronized Successfully (200 OK)</span>
               </>
             ) : (
               <>
-                <Sparkles className="w-4 h-4 text-[var(--terracotta)]" />
-                <span>Simulate 1-Click Google Sync</span>
+                <RefreshCw className="w-4 h-4" />
+                <span>Simulate Real-Time Google Sync</span>
               </>
             )}
           </button>
         </div>
-
-        {/* Live Exported Payload Cards */}
-        {syncStatus === 'synced' && (
-          <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 animate-fadeIn">
-            {/* Calendar Card Preview */}
-            <div className="p-4 rounded-xl bg-[var(--pista-container)]/70 border border-[var(--pista)]/30 text-left space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono uppercase font-bold text-[var(--pista-hover)]">
-                  Google Calendar Result
-                </span>
-                <span className="text-[10px] font-mono text-[var(--pista)]">HTTP 200 OK</span>
-              </div>
-              <h5 className="font-serif text-sm font-bold text-[var(--ink)]">
-                {current.eventTitle}
-              </h5>
-              <p className="text-xs text-[var(--ink-secondary)] font-mono">
-                {current.eventTime}
-              </p>
-            </div>
-
-            {/* Tasks Card Preview */}
-            <div className="p-4 rounded-xl bg-[var(--terracotta-container)]/70 border border-[var(--terracotta)]/30 text-left space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono uppercase font-bold text-[var(--terracotta)]">
-                  Google Tasks Result
-                </span>
-                <span className="text-[10px] font-mono text-[var(--terracotta)]">HTTP 200 OK</span>
-              </div>
-              <h5 className="font-serif text-sm font-bold text-[var(--ink)]">
-                {current.taskTitle}
-              </h5>
-              <p className="text-xs text-[var(--ink-secondary)] font-mono">
-                {current.assignee}
-              </p>
-            </div>
-          </div>
-        )}
       </div>
     </section>
-  )
+  );
 }
