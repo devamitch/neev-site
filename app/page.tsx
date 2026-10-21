@@ -3,8 +3,6 @@ import { siteConfig } from '@/lib/site'
 import { SiteHeader } from '@/components/SiteHeader'
 import { HeroSection } from '@/components/HeroSection'
 import { ScreensShowcase } from '@/components/ScreensShowcase'
-import { InteractiveMobileShowcase } from '@/components/InteractiveMobileShowcase'
-import { GoogleSyncInteractiveDemo } from '@/components/GoogleSyncInteractiveDemo'
 import { FeatureBento } from '@/components/FeatureBento'
 import { SpatialRadarShowcase } from '@/components/SpatialRadarShowcase'
 import { FaqSection } from '@/components/FaqSection'
@@ -26,12 +24,6 @@ export default function Page() {
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-4 pb-24 sm:gap-24 sm:px-6 lg:px-8">
           {/* Inside the Sanctuary App Showcase with Real Android Screenshots */}
           <ScreensShowcase />
-
-          {/* Interactive Mobile Device Simulator */}
-          <InteractiveMobileShowcase />
-
-          {/* Interactive Google Workspace Synchronization Pipeline */}
-          <GoogleSyncInteractiveDemo />
 
           {/* Feature Bento Architecture with Authentic Visual Cards */}
           <FeatureBento />
