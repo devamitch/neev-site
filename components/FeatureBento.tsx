@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Calendar, Shield, Sparkles, MapPin, Heart, BookOpen, Layers, Check } from 'lucide-react'
+import { Calendar, Shield, MapPin, Heart, BookOpen, Layers, Check } from 'lucide-react'
 
 export function FeatureBento() {
   const cards = [
@@ -83,11 +83,11 @@ export function FeatureBento() {
           return (
             <div
               key={idx}
-              className={`sanctuary-card p-6 sm:p-8 flex flex-col justify-between ${card.colSpan} hover:border-[var(--border-strong)] transition-all overflow-hidden group`}
+              className={`sanctuary-card p-7 sm:p-9 flex flex-col justify-between ${card.colSpan} transition-all duration-300 hover:-translate-y-1 overflow-hidden group bg-[var(--surface)] rounded-[32px]`}
             >
               <div>
                 {/* Visual Header Thumbnail */}
-                <div className="relative h-44 w-full rounded-2xl overflow-hidden mb-6 bg-[var(--surface2)] border border-[var(--border)]">
+                <div className="relative h-48 w-full rounded-2xl overflow-hidden mb-6 bg-[var(--surface2)]">
                   <Image
                     src={card.image}
                     alt={card.title}
@@ -96,13 +96,13 @@ export function FeatureBento() {
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface)]/90 via-transparent to-transparent" />
-                  <div className="absolute top-3 right-3">
-                    <span className="px-3 py-1 rounded-full bg-[var(--surface)]/95 backdrop-blur-md text-[var(--pista-hover)] text-[10px] font-mono font-semibold uppercase border border-[var(--border)] shadow-xs">
+                  <div className="absolute top-3.5 right-3.5">
+                    <span className="px-3.5 py-1.5 rounded-full bg-[var(--surface)]/95 backdrop-blur-md text-[var(--pista-hover)] text-[10px] font-mono font-semibold uppercase">
                       {card.badge}
                     </span>
                   </div>
-                  <div className="absolute bottom-3 left-3">
-                    <div className="w-10 h-10 rounded-xl bg-[var(--surface)]/95 backdrop-blur-md border border-[var(--border)] flex items-center justify-center text-[var(--pista)] shadow-xs">
+                  <div className="absolute bottom-3.5 left-3.5">
+                    <div className="w-11 h-11 rounded-2xl bg-[var(--surface)]/95 backdrop-blur-md flex items-center justify-center text-[var(--pista)]">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
@@ -119,7 +119,7 @@ export function FeatureBento() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-[var(--border)] space-y-2">
+              <div className="pt-4 space-y-2.5">
                 {card.details.map((detail, dIdx) => (
                   <div key={dIdx} className="flex items-start gap-2 text-xs text-[var(--ink)]">
                     <Check className="w-3.5 h-3.5 text-[var(--pista)] shrink-0 mt-0.5" />

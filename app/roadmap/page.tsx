@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/SiteHeader'
 import { SiteFooter } from '@/components/SiteFooter'
 import { siteConfig } from '@/lib/site'
-import { CheckCircle2, Clock, Sparkles } from 'lucide-react'
+import { CheckCircle2, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Product Roadmap · Neev Sanctuary',
@@ -69,10 +69,10 @@ export default function RoadmapPage() {
               <div
                 key={idx}
                 className={`sanctuary-card p-8 rounded-3xl ${
-                  milestone.current ? 'border-[var(--pista)]/50 bg-[var(--surface)]' : 'bg-[var(--surface2)]/50'
+                  milestone.current ? 'bg-[var(--surface)]' : 'bg-[var(--surface2)]/60'
                 }`}
               >
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-[var(--border)] gap-2 mb-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-4 gap-2 mb-4">
                   <div className="flex items-center gap-3">
                     <span className="font-mono text-sm font-bold text-[var(--pista)]">
                       {milestone.quarter}

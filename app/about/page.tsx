@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/SiteHeader'
 import { SiteFooter } from '@/components/SiteFooter'
 import { siteConfig } from '@/lib/site'
-import { Heart, Shield, Sparkles, ExternalLink, Code } from 'lucide-react'
+import { Heart, Shield, ExternalLink, Code } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'About Neev Sanctuary & Amit Chakraborty',

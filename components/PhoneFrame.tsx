@@ -21,11 +21,11 @@ export function PhoneFrame({
 }) {
   return (
     <div
-      className={`group relative aspect-[1080/2400] w-full rounded-[2.5rem] bg-gradient-to-b from-[#2E2D2A] via-[#1C1B19] to-[#121110] p-[8px] sm:p-[10px] border border-white/10 ring-1 ring-black/40 shadow-[0_24px_55px_-12px_rgba(20,19,17,0.35),0_8px_20px_rgba(0,0,0,0.15)] transition-all duration-500 ease-out hover:-translate-y-1.5 ${className}`}
+      className={`group relative aspect-[1080/2400] w-full rounded-[2.5rem] bg-[#1A1F1C] p-2 sm:p-2.5 transition-transform duration-500 ease-out hover:-translate-y-1 ${className}`}
     >
       {/* Centered micro-camera punch-hole in the top status bar center dead-zone */}
-      <div className="absolute top-3.5 left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-[#080808] border border-white/15 ring-1 ring-black/80 z-20 pointer-events-none flex items-center justify-center">
-        <span className="w-1.5 h-1.5 rounded-full bg-[#1e293b]/80" />
+      <div className="absolute top-3.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[#0B0E0C] z-20 pointer-events-none flex items-center justify-center">
+        <span className="w-1.5 h-1.5 rounded-full bg-[#1A2520]" />
       </div>
 
       {/* Screen container: pristine 1:1 reproduction of the authentic app screenshot */}
@@ -35,11 +35,11 @@ export function PhoneFrame({
           alt={alt}
           fill
           sizes="(max-width: 768px) 85vw, 420px"
-          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
+          className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.01]"
           priority={priority}
         />
-        {/* Specular glass reflection overlay */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none" />
+        {/* Specular soft ambient reflection overlay */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-transparent pointer-events-none" />
       </div>
     </div>
   )

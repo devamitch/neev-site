@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { SiteHeader } from '@/components/SiteHeader'
 import { SiteFooter } from '@/components/SiteFooter'
 import { siteConfig } from '@/lib/site'
-import { Shield, Sparkles, Key, Smartphone, Cloud, ArrowRight } from 'lucide-react'
+import { Shield, BookOpen, Key, Smartphone, Cloud, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export default function HowItWorksPage() {
       num: '04',
       title: 'Preserve Heirlooms Across Generations',
       desc: 'Grandparents record audio anecdotes, parents catalog ancestral recipes, and memories are timestamped on your family timeline forever.',
-      icon: Sparkles,
+      icon: BookOpen,
     },
   ]
 

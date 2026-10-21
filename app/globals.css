@@ -67,25 +67,25 @@ body {
   overflow-x: hidden;
 }
 
-/* Zero shadow flat squircle cards with crisp hairlines */
+/* Zero shadow, zero border flat squircle cards with velvety porcelain depth */
 .sanctuary-card {
   background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
+  border: none !important;
+  border-radius: clamp(24px, 2.8vw, 36px);
   box-shadow: none !important;
 }
 
 .sanctuary-card-hover {
   background-color: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
+  border: none !important;
+  border-radius: clamp(24px, 2.8vw, 36px);
   box-shadow: none !important;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
 }
 
 .sanctuary-card-hover:hover {
-  border-color: var(--border-strong);
-  background-color: #FEFFFD;
+  background-color: #FFFFFF;
+  transform: translateY(-2px);
 }
 
 /* Mascot living emotion keyframes */

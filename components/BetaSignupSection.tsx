@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Sparkles, Check, ArrowRight, ShieldCheck } from 'lucide-react'
+import { Check, ArrowRight, ShieldCheck, Heart } from 'lucide-react'
 
 export function BetaSignupSection() {
   const [submitted, setSubmitted] = useState(false)
@@ -16,14 +16,14 @@ export function BetaSignupSection() {
 
   return (
     <section id="beta" className="py-20 scroll-mt-20">
-      <div className="max-w-4xl mx-auto rounded-3xl bg-[var(--surface)] border border-[var(--border)] p-8 sm:p-14 text-center sanctuary-card relative overflow-hidden">
+      <div className="max-w-4xl mx-auto rounded-[36px] bg-[var(--surface)] p-8 sm:p-14 text-center sanctuary-card relative overflow-hidden">
         {/* Soft decorative glow */}
-        <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--terracotta-container)]/60 blur-[80px] pointer-events-none rounded-full" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[var(--pista-container)]/60 blur-[80px] pointer-events-none rounded-full" />
+        <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--terracotta-container)]/50 blur-[80px] pointer-events-none rounded-full" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[var(--pista-container)]/50 blur-[80px] pointer-events-none rounded-full" />
 
         <div className="relative z-10 max-w-2xl mx-auto">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--pista-container)] text-[var(--pista-hover)] text-xs font-mono uppercase tracking-wider mb-6">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--pista-container)] text-[var(--pista-hover)] text-xs font-mono uppercase tracking-wider mb-6">
+            <Heart className="w-3.5 h-3.5" />
             <span>Closed Beta Testing Program</span>
           </div>
 
@@ -36,7 +36,7 @@ export function BetaSignupSection() {
           </p>
 
           {submitted ? (
-            <div className="rounded-2xl bg-[var(--pista-container)] p-6 text-center border border-[var(--pista)]/30">
+            <div className="rounded-3xl bg-[var(--pista-container)] p-6 text-center">
               <div className="w-10 h-10 rounded-full bg-[var(--pista)] text-white flex items-center justify-center mx-auto mb-3">
                 <Check className="w-5 h-5" />
               </div>
@@ -55,11 +55,11 @@ export function BetaSignupSection() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your family email address"
-                className="flex-1 px-4 py-3 rounded-full bg-[var(--surface2)] border border-[var(--border)] text-xs sm:text-sm text-[var(--ink)] placeholder:text-[var(--ink-muted)] focus:outline-none focus:border-[var(--pista)] transition-all"
+                className="flex-1 px-5 py-3.5 rounded-full bg-[var(--surface2)] text-xs sm:text-sm text-[var(--ink)] placeholder:text-[var(--ink-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--pista)]/25 transition-all"
               />
               <button
                 type="submit"
-                className="px-6 py-3 rounded-full bg-[var(--pista)] text-white text-xs sm:text-sm font-semibold hover:bg-[var(--pista-hover)] transition-all inline-flex items-center justify-center gap-2 shrink-0 shadow-none"
+                className="px-7 py-3.5 rounded-full bg-[var(--pista)] text-white text-xs sm:text-sm font-semibold hover:bg-[var(--pista-hover)] transition-all inline-flex items-center justify-center gap-2 shrink-0 cursor-pointer active:scale-98"
               >
                 <span>Request Invite</span>
                 <ArrowRight className="w-4 h-4" />

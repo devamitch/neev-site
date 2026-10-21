@@ -54,14 +54,14 @@ export function FaqSection() {
             return (
               <div
                 key={idx}
-                className="sanctuary-card rounded-2xl overflow-hidden border border-[var(--border)] transition-all hover:border-[var(--border-strong)]"
+                className="sanctuary-card rounded-2xl sm:rounded-3xl overflow-hidden transition-all bg-[var(--surface)] mb-3"
               >
                 <button
                   type="button"
                   onClick={() => toggle(idx)}
-                  className="w-full p-5 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
+                  className="w-full p-6 text-left flex items-center justify-between gap-4 cursor-pointer focus:outline-none"
                 >
-                  <span className="font-serif text-base sm:text-lg font-bold text-[var(--ink)] flex items-center gap-3">
+                  <span className="font-serif text-base sm:text-lg font-bold text-[var(--ink)] flex items-center gap-3.5">
                     <HelpCircle className="w-5 h-5 text-[var(--pista)] shrink-0" />
                     <span>{faq.q}</span>
                   </span>
@@ -72,7 +72,7 @@ export function FaqSection() {
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed pl-12 border-t border-[var(--border)]/50 bg-[var(--surface2)]/40 animate-fadeIn">
+                  <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed pl-14 bg-[var(--surface2)]/40 rounded-b-2xl animate-fadeIn">
                     {faq.a}
                   </div>
                 )}

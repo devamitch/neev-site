@@ -5,13 +5,13 @@ import { ShieldCheck, Heart, ExternalLink } from 'lucide-react'
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[var(--border)] bg-[var(--surface)] py-16 text-[var(--ink-secondary)]">
+    <footer className="bg-[var(--surface2)]/70 py-16 text-[var(--ink-secondary)]">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-[var(--border)]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12">
           {/* Brand Info */}
           <div className="md:col-span-1 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[var(--pista-container)] border border-[var(--pista)]/20">
+              <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-[var(--pista-container)]">
                 <Image src="/favicon.png" alt="Neev Logo" width={22} height={22} />
               </div>
               <span className="font-serif text-lg font-bold text-[var(--ink)]">
@@ -94,7 +94,7 @@ export function SiteFooter() {
             <h4 className="text-xs font-semibold uppercase tracking-wider text-[var(--ink)]">
               Architect
             </h4>
-            <div className="rounded-2xl p-4 bg-[var(--surface2)] border border-[var(--border)] space-y-2">
+            <div className="rounded-3xl p-5 bg-[var(--surface)] space-y-2">
               <span className="text-[11px] font-mono text-[var(--pista)] block uppercase">
                 Created & Engineered by
               </span>

@@ -3,15 +3,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { navItems, siteConfig } from '@/lib/site'
-import { Sparkles, Shield, Heart } from 'lucide-react'
+import { Shield, ArrowRight } from 'lucide-react'
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[var(--border)] bg-[var(--surface-glass)] backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full bg-[var(--surface-glass)] backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand Logo & Title */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--pista-container)] border border-[var(--pista)]/20 overflow-hidden shadow-none transition-transform group-hover:scale-105">
+          <div className="relative flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--pista-container)] overflow-hidden shadow-none transition-transform group-hover:scale-105">
             <Image
               src="/logo.png"
               alt="Neev Sanctuary Emblem"
@@ -31,7 +31,7 @@ export function SiteHeader() {
         </Link>
 
         {/* Desktop Nav Items */}
-        <nav className="hidden md:flex items-center gap-1 bg-[var(--surface2)]/80 p-1 rounded-full border border-[var(--border)]">
+        <nav className="hidden md:flex items-center gap-1 bg-[var(--surface2)]/80 p-1 rounded-full">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -55,10 +55,10 @@ export function SiteHeader() {
 
           <Link
             href="/beta"
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[var(--pista)] text-white text-xs font-semibold hover:bg-[var(--pista-hover)] transition-all shadow-none"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--pista)] text-white text-xs font-semibold hover:bg-[var(--pista-hover)] transition-all"
           >
             <span>Join Beta</span>
-            <Sparkles className="w-3.5 h-3.5 text-[var(--terracotta-container)]" />
+            <ArrowRight className="w-3.5 h-3.5 text-white" />
           </Link>
         </div>
       </div>

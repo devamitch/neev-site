@@ -12,7 +12,6 @@ import {
   CheckCircle2,
   Layers,
   Radio,
-  Sparkles
 } from 'lucide-react';
 
 export function SpatialRadarShowcase() {
@@ -110,10 +109,10 @@ export function SpatialRadarShowcase() {
 
   return (
     <section className="py-16 scroll-mt-20">
-      <div className="sanctuary-card p-6 sm:p-12 max-w-5xl mx-auto border border-[var(--border)]">
+      <div className="sanctuary-card p-7 sm:p-12 max-w-5xl mx-auto rounded-[36px] bg-[var(--surface)]">
         {/* Header */}
         <div className="max-w-2xl mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--pista-container)] text-[var(--pista-hover)] text-xs font-mono uppercase tracking-wider mb-3">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--pista-container)] text-[var(--pista-hover)] text-xs font-mono uppercase tracking-wider mb-3">
             <Compass className="w-3.5 h-3.5" />
             <span>Hardware Telemetry &amp; Free Cartography</span>
           </div>
@@ -128,9 +127,9 @@ export function SpatialRadarShowcase() {
         {/* Interactive Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           {/* Left: 3D Radar Simulator Canvas */}
-          <div className="lg:col-span-7 rounded-3xl bg-[var(--dock)] p-6 text-white relative overflow-hidden min-h-[380px] flex flex-col justify-between border border-white/10 shadow-xl">
+          <div className="lg:col-span-7 rounded-[28px] bg-[var(--dock)] p-6 sm:p-8 text-white relative overflow-hidden min-h-[400px] flex flex-col justify-between">
             {/* Geodetic Telemetry Header */}
-            <div className="flex items-center justify-between text-[11px] font-mono text-white/70 border-b border-white/10 pb-3 z-10">
+            <div className="flex items-center justify-between text-[11px] font-mono text-white/70 pb-3 z-10">
               <span className="text-[var(--pista)] font-bold flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-[var(--pista)] animate-pulse" />
                 Bengaluru Radar Grid
@@ -152,7 +151,7 @@ export function SpatialRadarShowcase() {
               <div className="absolute w-52 h-52 rounded-full border border-white/10" />
               <div className="absolute w-38 h-38 rounded-full border border-white/15" />
               <div className="absolute w-24 h-24 rounded-full border border-white/20" />
-              <div className="w-3.5 h-3.5 rounded-full bg-[var(--pista)] z-10 shadow-[0_0_12px_var(--pista)]" />
+              <div className="w-3.5 h-3.5 rounded-full bg-[var(--pista)] z-10" />
 
               {/* Pulsing Acoustic Wave */}
               {isChirping && (
@@ -169,14 +168,14 @@ export function SpatialRadarShowcase() {
               <button
                 type="button"
                 onClick={() => setSelectedNode('dada')}
-                className={`absolute top-4 left-10 flex items-center gap-2 p-1 rounded-xl transition-transform cursor-pointer ${
-                  selectedNode === 'dada' ? 'scale-110 ring-2 ring-[var(--pista)]' : 'opacity-85 hover:opacity-100'
+                className={`absolute top-4 left-10 flex items-center gap-2 p-1 rounded-2xl transition-transform cursor-pointer ${
+                  selectedNode === 'dada' ? 'scale-105' : 'opacity-85 hover:opacity-100'
                 }`}
               >
-                <div className="w-8 h-8 rounded-full bg-[var(--pista)] text-white text-xs font-bold flex items-center justify-center border-2 border-white shadow-lg">
+                <div className="w-8 h-8 rounded-full bg-[var(--pista)] text-white text-xs font-bold flex items-center justify-center">
                   Dada
                 </div>
-                <div className="bg-black/70 backdrop-blur-sm px-2 py-1 rounded-lg text-[10px] font-mono border border-white/15 text-left">
+                <div className="bg-black/80 backdrop-blur-sm px-2.5 py-1 rounded-xl text-[10px] font-mono text-left">
                   <span className="text-white block font-semibold">Dada’s Phone</span>
                   <span className="text-[var(--terracotta)] block font-bold">Cushion · 2.1m</span>
                 </div>
@@ -185,14 +184,14 @@ export function SpatialRadarShowcase() {
               <button
                 type="button"
                 onClick={() => setSelectedNode('mom')}
-                className={`absolute bottom-4 right-10 flex items-center gap-2 p-1 rounded-xl transition-transform cursor-pointer ${
-                  selectedNode === 'mom' ? 'scale-110 ring-2 ring-[var(--terracotta)]' : 'opacity-85 hover:opacity-100'
+                className={`absolute bottom-4 right-10 flex items-center gap-2 p-1 rounded-2xl transition-transform cursor-pointer ${
+                  selectedNode === 'mom' ? 'scale-105' : 'opacity-85 hover:opacity-100'
                 }`}
               >
-                <div className="w-8 h-8 rounded-full bg-[var(--terracotta)] text-white text-xs font-bold flex items-center justify-center border-2 border-white shadow-lg">
+                <div className="w-8 h-8 rounded-full bg-[var(--terracotta)] text-white text-xs font-bold flex items-center justify-center">
                   Mom
                 </div>
-                <div className="bg-black/70 backdrop-blur-sm px-2 py-1 rounded-lg text-[10px] font-mono border border-white/15 text-left">
+                <div className="bg-black/80 backdrop-blur-sm px-2.5 py-1 rounded-xl text-[10px] font-mono text-left">
                   <span className="text-white block font-semibold">Sneha</span>
                   <span className="text-[var(--pista)] block font-bold">Table · 4.8m</span>
                 </div>
@@ -201,14 +200,14 @@ export function SpatialRadarShowcase() {
               <button
                 type="button"
                 onClick={() => setSelectedNode('aarav')}
-                className={`absolute bottom-6 left-14 flex items-center gap-2 p-1 rounded-xl transition-transform cursor-pointer ${
-                  selectedNode === 'aarav' ? 'scale-110 ring-2 ring-sky-400' : 'opacity-85 hover:opacity-100'
+                className={`absolute bottom-6 left-14 flex items-center gap-2 p-1 rounded-2xl transition-transform cursor-pointer ${
+                  selectedNode === 'aarav' ? 'scale-105' : 'opacity-85 hover:opacity-100'
                 }`}
               >
-                <div className="w-7 h-7 rounded-full bg-sky-500 text-white text-[10px] font-bold flex items-center justify-center border-2 border-white shadow-lg">
+                <div className="w-7 h-7 rounded-full bg-sky-500 text-white text-[10px] font-bold flex items-center justify-center">
                   Aarav
                 </div>
-                <div className="bg-black/70 backdrop-blur-sm px-1.5 py-0.5 rounded-lg text-[9px] font-mono border border-white/15 text-left">
+                <div className="bg-black/80 backdrop-blur-sm px-2 py-0.5 rounded-xl text-[9px] font-mono text-left">
                   <span className="text-white block font-semibold">Aarav</span>
                   <span className="text-sky-300 block">Desk · 3.4m</span>
                 </div>
@@ -216,7 +215,7 @@ export function SpatialRadarShowcase() {
             </div>
 
             {/* Bottom Telemetry Bar */}
-            <div className="pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-white/70 z-10">
+            <div className="pt-3 flex items-center justify-between text-[11px] font-mono text-white/70 z-10">
               <span className="flex items-center gap-1.5">
                 <WifiOff className="w-3.5 h-3.5 text-[var(--pista)]" />
                 <span>Selected: {currentNode.name}</span>
@@ -231,16 +230,16 @@ export function SpatialRadarShowcase() {
               Physical Plane Elevation Classifier
             </span>
 
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               {(['cushion', 'table', 'floor'] as const).map((plane) => (
                 <button
                   key={plane}
                   type="button"
                   onClick={() => setSelectedPlane(plane)}
-                  className={`w-full p-3.5 rounded-2xl text-left border transition-all cursor-pointer ${
+                  className={`w-full p-4 rounded-2xl text-left transition-all cursor-pointer ${
                     selectedPlane === plane
-                      ? 'bg-[var(--surface)] border-[var(--ink)] shadow-xs scale-[1.01]'
-                      : 'bg-[var(--surface2)] border-[var(--border)] hover:bg-[var(--surface3)]'
+                      ? 'bg-[var(--surface)] text-[var(--ink)] scale-[1.01]'
+                      : 'bg-[var(--surface2)] text-[var(--ink-secondary)] hover:bg-[var(--surface3)]'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-1">
@@ -266,7 +265,7 @@ export function SpatialRadarShowcase() {
             </div>
 
             {/* Acoustic Locator Trigger */}
-            <div className="p-4 rounded-2xl bg-[var(--surface)] border border-[var(--border)] space-y-2">
+            <div className="p-5 rounded-2xl bg-[var(--surface2)]/60 space-y-2.5">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold text-[var(--ink)]">Acoustic Cushion Chirp</span>
                 <span className="text-[10px] font-mono text-[var(--pista-hover)] font-bold">
@@ -279,7 +278,7 @@ export function SpatialRadarShowcase() {
               <button
                 type="button"
                 onClick={triggerChirp}
-                className="w-full py-2.5 rounded-xl bg-[var(--terracotta)] text-white text-xs font-semibold hover:bg-[var(--terracotta-hover)] transition-all flex items-center justify-center gap-2 shadow-xs cursor-pointer active:scale-95"
+                className="w-full py-3 rounded-full bg-[var(--terracotta)] text-white text-xs font-semibold hover:bg-[var(--terracotta-hover)] transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
               >
                 <Volume2 className="w-3.5 h-3.5" />
                 <span>{isChirping ? 'Sonic Burst Emitting...' : 'Test Acoustic Cushion Chirp'}</span>
