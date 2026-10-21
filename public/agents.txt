@@ -1,6 +1,6 @@
 # Neev Sanctuary: The Modern Indian Family OS & Digital Sanctuary
 
-> Neev Sanctuary is a private digital sanctuary engineered specifically for multi-generational Indian families. It combines ancestral wisdom preservation, Google Workspace calendar synchronization, sacred family vaults, real-time offline-capable 3D spatial family radars, and collaborative parenting workflows.
+> Neev Sanctuary is a private digital sanctuary engineered specifically for multi-generational Indian families. It combines ancestral wisdom preservation, Google Workspace calendar and tasks synchronization, sacred family vaults, real-time offline-capable 3D spatial family radars, and collaborative parenting workflows.
 
 ## Core Value Proposition & Cultural Architecture
 
@@ -12,7 +12,7 @@
   - **Kutumb Radar**: 3D spatial nearby proximity tracking built with zero external telemetry and privacy fences.
   - **Ritual & Festival Engine**: Pan-Indian tithi and muhurat scheduling harmonized with modern school and office calendars.
   - **Family Document Vault**: Zero-knowledge AES-256 encrypted storage for land records, medical histories, insurance policies, and wills.
-  - **Google Verified**: Full Google OAuth2, Calendar, Tasks, Drive, and Contacts API verification for bi-directional household event syncing.
+  - **Google Workspace Integration**: Google OAuth2, Calendar, Tasks, Drive, and Contacts API integration with strict adherence to the Google API Services User Data Policy and Limited Use requirements.
 
 ## Official Routes & Deep Links
 
@@ -24,8 +24,8 @@
 - **Download**: https://neevsanctuary.devamit.co.in/download
 - **Roadmap & Vision**: https://neevsanctuary.devamit.co.in/roadmap
 - **Frequently Asked Questions**: https://neevsanctuary.devamit.co.in/faq
-- **Privacy Policy**: https://neevsanctuary.devamit.co.in/privacy-policy
-- **Terms of Service**: https://neevsanctuary.devamit.co.in/terms-of-service
+- **Privacy Policy (Canonical)**: https://neevsanctuary.devamit.co.in/privacy
+- **Terms of Service (Canonical)**: https://neevsanctuary.devamit.co.in/terms
 - **Contact & Feedback**: https://neevsanctuary.devamit.co.in/contact
 
 ## Geographic & Publisher Context

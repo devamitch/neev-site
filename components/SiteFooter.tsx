@@ -67,7 +67,7 @@ export function SiteFooter() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/privacy-policy" className="hover:text-[var(--ink)] transition-colors font-medium text-[var(--pista)]">
+                <Link href="/privacy" className="hover:text-[var(--ink)] transition-colors font-medium text-[var(--pista)]">
                   Privacy Policy (Limited Use)
                 </Link>
               </li>

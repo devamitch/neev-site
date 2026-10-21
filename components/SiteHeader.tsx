@@ -46,11 +46,11 @@ export function SiteHeader() {
         {/* Actions */}
         <div className="flex items-center gap-3">
           <Link
-            href="/privacy-policy"
+            href="/privacy"
             className="hidden sm:inline-flex items-center gap-1.5 text-xs text-[var(--pista)] font-medium hover:underline"
           >
             <Shield className="w-3.5 h-3.5" />
-            <span>Google Verified</span>
+            <span>Google Limited Use</span>
           </Link>
 
           <Link

@@ -155,6 +155,29 @@ export function HeroSection() {
             </div>
           </div>
         </div>
+
+        {/* Google Workspace Coordination & Purpose Clarity Banner */}
+        <div className="mt-8 mx-auto max-w-3xl rounded-2xl bg-[var(--surface)] p-5 border border-[var(--border)] text-left flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="flex items-center gap-2">
+              <Shield className="w-4 h-4 text-[var(--pista)] shrink-0" />
+              <span className="text-xs font-semibold text-[var(--ink)]">
+                Google Workspace Integration (Calendar &amp; Tasks)
+              </span>
+            </div>
+            <p className="text-[11px] text-[var(--ink-secondary)] leading-relaxed">
+              Export family festivals, doctor visits, and chores directly to your Google account. Zero AI model training, zero data sales, strictly compliant with Google Limited Use.
+            </p>
+          </div>
+          <div className="flex items-center gap-2 shrink-0">
+            <Link
+              href="/privacy"
+              className="text-xs font-semibold text-[var(--pista)] hover:underline whitespace-nowrap"
+            >
+              Privacy Policy &rarr;
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   )

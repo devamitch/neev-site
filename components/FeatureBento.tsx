@@ -7,7 +7,7 @@ export function FeatureBento() {
       subtitle: 'Two-way integration for busy family schedules',
       description: 'Export family rituals, doctor visits, and school preparation directly to Google Calendar and Google Tasks. Strictly verified under the Google Limited Use clause.',
       icon: Calendar,
-      badge: 'Google Verified',
+      badge: 'Google Limited Use',
       accent: 'var(--pista)',
       colSpan: 'md:col-span-2',
       details: [

@@ -5,7 +5,10 @@ export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date()
-  return routes.map((route) => {
+  const canonicalRoutes = routes.filter(
+    (route) => route !== '/privacy-policy' && route !== '/terms-of-service'
+  )
+  return canonicalRoutes.map((route) => {
     let priority = 0.8
     let changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] = 'weekly'
 
