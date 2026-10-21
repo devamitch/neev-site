@@ -3,179 +3,277 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Sparkles, Calendar, Shield, Users, Compass, CheckCircle2, ArrowRight } from 'lucide-react'
+import {
+  ArrowRight,
+  Check,
+  Sparkles,
+  ExternalLink,
+  ChevronLeft,
+  ChevronRight,
+  ShieldCheck,
+  Users,
+  Compass,
+  Calendar,
+  Lock,
+} from 'lucide-react'
+
+interface HeroCard {
+  id: string
+  title: string
+  subtitle: string
+  photo: string
+  badge: string
+}
+
+const HERO_SCREENS: HeroCard[] = [
+  {
+    id: 'dashboard',
+    title: 'Sanctuary Dashboard',
+    subtitle: 'Daily Rhythms & Mascot',
+    photo: '/assets/app/01_dashboard_sanctuary.png',
+    badge: 'Living Mascot · Active',
+  },
+  {
+    id: 'rituals',
+    title: 'Panchang Ritual Engine',
+    subtitle: 'Sacred Tithis & Chores',
+    photo: '/assets/illustrations/neev_functions_rituals.png',
+    badge: 'Google Calendar Synced',
+  },
+  {
+    id: 'vault',
+    title: 'Sanskriti Heirloom Vault',
+    subtitle: 'Oral Folklore & Recipes',
+    photo: '/assets/illustrations/neev_heirloom_vault.png',
+    badge: 'AES-256 Keystore Vault',
+  },
+  {
+    id: 'settings',
+    title: 'Security & Theme Controls',
+    subtitle: 'Google Disconnect & Purge',
+    photo: '/assets/app/05_sanctuary_settings_theme.png',
+    badge: '1-Tap Hard Deletion',
+  },
+  {
+    id: 'home',
+    title: 'Kutumb Family Hearth',
+    subtitle: 'Shared Parenting & Care',
+    photo: '/assets/illustrations/neev_sanctuary_home.png',
+    badge: 'Multi-Gen Harmony',
+  },
+]
 
 export function HeroSection() {
-  const [activeRole, setActiveRole] = useState<'grandparents' | 'parents' | 'children'>('parents')
+  const [centerIndex, setCenterIndex] = useState(0)
 
-  const rolePreviews = {
-    grandparents: {
-      title: 'Grandparents: Wisdom & Cultural Legacy',
-      badge: 'Generational Anchor',
-      description: 'Simplified, high-contrast, large-touch interfaces designed for Dada & Dadi. Record voice anecdotes, share heirloom recipes, and view daily prayer and medicine reminders effortlessly.',
-      features: ['Voice-recorded folklore & bedtime stories', 'Panchang puja timings & medicine bells', 'One-tap family video check-ins'],
-      accentColor: 'var(--terracotta)',
-    },
-    parents: {
-      title: 'Parents: Shared Parenting & Routine Sync',
-      badge: 'Family Orchestra',
-      description: 'Harmonize co-parenting schedules, medical records, school fees, and grocery essentials across busy households with two-way Google Calendar and Tasks synchronization.',
-      features: ['Google Calendar & Tasks family export', 'Pediatric vaccination & milestone radar', 'Collaborative meal & errand lists'],
-      accentColor: 'var(--pista)',
-    },
-    children: {
-      title: 'Children: Safe Rituals & Family Quests',
-      badge: 'Sanctuary Explorer',
-      description: 'An ad-free, secure sanctuary for kids to celebrate milestones, learn cultural roots through playful family challenges, and stay connected with distant cousins.',
-      features: ['Curated family photo timeline', 'Dadi’s story audio player', 'Zero ads or predatory algorithms'],
-      accentColor: 'var(--pista-hover)',
-    },
-  }
+  const leftIndex = (centerIndex - 1 + HERO_SCREENS.length) % HERO_SCREENS.length
+  const rightIndex = (centerIndex + 1) % HERO_SCREENS.length
 
-  const current = rolePreviews[activeRole]
+  const centerCard = HERO_SCREENS[centerIndex]
+  const leftCard = HERO_SCREENS[leftIndex]
+  const rightCard = HERO_SCREENS[rightIndex]
+
+  const swapToLeft = () => setCenterIndex(leftIndex)
+  const swapToRight = () => setCenterIndex(rightIndex)
 
   return (
-    <section className="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-28">
-      {/* Background Soft Aura */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-[var(--pista-container)]/50 blur-[100px] pointer-events-none rounded-full" />
+    <section className="relative overflow-hidden px-4 pb-16 pt-8 sm:px-8 sm:pb-24 sm:pt-14 lg:px-10">
+      {/* Subtle dual radial ambient aura */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[720px] bg-[radial-gradient(60%_60%_at_70%_20%,rgba(107,133,110,0.18),transparent_70%),radial-gradient(40%_40%_at_10%_10%,rgba(218,119,86,0.15),transparent_70%)]" />
 
-      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        {/* Eyebrow Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--pista-container)] border border-[var(--pista)]/25 text-[var(--pista-hover)] text-xs font-mono font-medium tracking-wide uppercase mb-8 shadow-none">
-          <span className="flex h-2 w-2 rounded-full bg-[var(--terracotta)] animate-pulse" />
-          <span>The Modern Indian Joint Family OS</span>
-        </div>
-
-        {/* Living Mascot Emblem with Breathing Motion */}
-        <div className="flex justify-center mb-6">
-          <div className="relative group">
-            <div className="w-20 h-20 rounded-3xl bg-[var(--surface)] border border-[var(--border)] flex items-center justify-center p-3 animate-breathing sanctuary-card">
-              <Image
-                src="/favicon.png"
-                alt="Living Neev Mascot"
-                width={54}
-                height={54}
-                className="object-contain animate-tilt"
-                priority
-              />
-            </div>
-            <span className="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-full bg-[var(--terracotta)] text-white text-[9px] font-mono tracking-wider uppercase font-semibold">
-              Live
-            </span>
-          </div>
-        </div>
-
-        {/* Apple Large Title Serif Heading */}
-        <h1 className="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--ink)] leading-[1.1] mb-6">
-          A Private Sanctuary for the <br />
-          <span className="italic font-normal text-[var(--pista)]">
-            Multi-Generational
-          </span>{' '}
-          Indian Family
-        </h1>
-
-        {/* Serene Subtitle */}
-        <p className="mx-auto max-w-2xl text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed mb-10 font-light">
-          Coordinate shared parenting, harmonize daily routines with Google Calendar and Tasks, and preserve cultural heirlooms — protected by zero-knowledge privacy.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+      <div className="mx-auto grid w-full max-w-[1240px] items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-10">
+        {/* Left Column: Editorial Story & Google Workspace Trust */}
+        <div className="max-w-[620px] text-center lg:text-left mx-auto lg:mx-0">
+          {/* Top Eyebrow Badge */}
           <Link
             href="/beta"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[var(--pista)] text-white text-sm font-semibold hover:bg-[var(--pista-hover)] transition-all shadow-none"
+            className="group mb-6 inline-flex items-center gap-2.5 rounded-full bg-[var(--surface)] py-1.5 pl-2 pr-4 text-[13px] font-medium text-[var(--ink-secondary)] border border-[var(--border)] shadow-xs transition-all hover:border-[var(--border-strong)]"
           >
-            <span>Request Sanctuary Access</span>
-            <ArrowRight className="w-4 h-4" />
+            <span className="rounded-full bg-[var(--terracotta)] px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white">
+              Family OS Beta
+            </span>
+            <span>Request sanctuary access for your kutumb</span>
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 text-[var(--terracotta)]" aria-hidden="true" />
           </Link>
-          <a
-            href="#features"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[var(--surface)] border border-[var(--border)] text-[var(--ink)] text-sm font-medium hover:border-[var(--border-strong)] transition-all shadow-none"
-          >
-            <Compass className="w-4 h-4 text-[var(--terracotta)]" />
-            <span>Explore Architecture</span>
-          </a>
-        </div>
 
-        {/* Multi-Generational Family Roles Interactive Switcher */}
-        <div className="mx-auto max-w-3xl sanctuary-card p-6 sm:p-8 text-left transition-all">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-[var(--border)] gap-4">
-            <div>
-              <span className="text-[11px] font-mono uppercase tracking-wider text-[var(--terracotta)] font-semibold block">
-                Tailored Perspectives
-              </span>
-              <h3 className="font-serif text-xl font-bold text-[var(--ink)]">
-                {current.title}
-              </h3>
-            </div>
+          {/* Grand Headline */}
+          <h1 className="text-balance font-serif text-[clamp(2.75rem,6vw,5.2rem)] font-bold leading-[1.02] tracking-[-0.03em] text-[var(--ink)]">
+            A Private Sanctuary for the{' '}
+            <span className="italic font-normal text-[var(--pista)] relative inline-block">
+              Multi-Generational
+            </span>{' '}
+            Indian Family
+          </h1>
 
-            {/* Role Buttons */}
-            <div className="flex items-center bg-[var(--surface2)] p-1 rounded-full border border-[var(--border)]">
-              {(['grandparents', 'parents', 'children'] as const).map((role) => (
-                <button
-                  key={role}
-                  onClick={() => setActiveRole(role)}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium capitalize transition-all ${
-                    activeRole === role
-                      ? 'bg-[var(--surface)] text-[var(--ink)] shadow-none font-semibold'
-                      : 'text-[var(--ink-muted)] hover:text-[var(--ink)]'
-                  }`}
-                >
-                  {role}
-                </button>
-              ))}
-            </div>
+          {/* Serene Subtitle */}
+          <p className="mt-6 text-base sm:text-lg text-[var(--ink-secondary)] leading-relaxed font-light">
+            Coordinate shared parenting, harmonize daily routines with Google Calendar and Tasks, and preserve ancestral heirlooms — protected by zero-knowledge sovereignty and on-device hardware encryption.
+          </p>
+
+          {/* Action Buttons */}
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <Link
+              href="/beta"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-13 px-8 rounded-full bg-[var(--pista)] hover:bg-[var(--pista-hover)] text-white text-base font-semibold transition-all active:scale-95 shadow-none"
+            >
+              <span>Join Beta Sanctuary</span>
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+
+            <a
+              href="#screens"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 min-h-13 px-6 rounded-full bg-[var(--surface)] hover:bg-[var(--surface2)] text-[var(--ink)] text-base font-semibold border border-[var(--border-strong)] transition-all active:scale-95 shadow-xs"
+            >
+              <Compass className="h-4 w-4 text-[var(--terracotta)]" aria-hidden="true" />
+              <span>Explore Native Screens</span>
+            </a>
           </div>
 
-          <div className="pt-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-            <div className="md:col-span-2 space-y-3">
-              <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
-                {current.description}
+          {/* Heritage Trust Bullets */}
+          <ul className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-2.5 text-xs sm:text-sm font-medium text-[var(--ink-secondary)]">
+            <li className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--pista-container)] text-[var(--pista-hover)]">
+                <Check className="h-3 w-3" aria-hidden="true" />
+              </span>
+              100% On-Device MMKV Encryption
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--pista-container)] text-[var(--pista-hover)]">
+                <Check className="h-3 w-3" aria-hidden="true" />
+              </span>
+              Google Calendar &amp; Tasks Sync
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[var(--pista-container)] text-[var(--pista-hover)]">
+                <Check className="h-3 w-3" aria-hidden="true" />
+              </span>
+              Zero AI Model Training
+            </li>
+          </ul>
+
+          {/* Google Workspace Unauthenticated Reviewer Trust Card */}
+          <div className="mt-8 p-4 rounded-2xl bg-[var(--surface)] border border-[var(--border)] text-left flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-[var(--pista)] shrink-0" />
+                <span className="text-xs font-bold text-[var(--ink)]">
+                  Google Workspace Integration · Limited Use Verified
+                </span>
+              </div>
+              <p className="text-[11px] text-[var(--ink-secondary)] leading-relaxed">
+                Sync family festivals, pediatric vaccine appointments, and household chores directly into your personal Google Calendar and Google Tasks.
               </p>
-              <div className="space-y-2 pt-2">
-                {current.features.map((feat, idx) => (
-                  <div key={idx} className="flex items-center gap-2 text-xs text-[var(--ink)]">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-[var(--pista)] shrink-0" />
-                    <span>{feat}</span>
-                  </div>
-                ))}
-              </div>
             </div>
-
-            <div className="md:col-span-1 rounded-2xl bg-[var(--surface2)] p-4 border border-[var(--border)] text-center space-y-2">
-              <span className="text-[10px] font-mono text-[var(--ink-muted)] uppercase block">
-                Sanctuary Mode
-              </span>
-              <div className="font-serif text-lg font-bold text-[var(--ink)] capitalize">
-                {activeRole}
-              </div>
-              <span className="inline-block px-2.5 py-1 rounded-full bg-[var(--pista-container)] text-[var(--pista-hover)] text-[10px] font-semibold">
-                {current.badge}
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Google Workspace Coordination & Purpose Clarity Banner */}
-        <div className="mt-8 mx-auto max-w-3xl rounded-2xl bg-[var(--surface)] p-5 border border-[var(--border)] text-left flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="space-y-1">
-            <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-[var(--pista)] shrink-0" />
-              <span className="text-xs font-semibold text-[var(--ink)]">
-                Google Workspace Integration (Calendar &amp; Tasks)
-              </span>
-            </div>
-            <p className="text-[11px] text-[var(--ink-secondary)] leading-relaxed">
-              Export family festivals, doctor visits, and chores directly to your Google account. Zero AI model training, zero data sales, strictly compliant with Google Limited Use.
-            </p>
-          </div>
-          <div className="flex items-center gap-2 shrink-0">
             <Link
               href="/privacy"
-              className="text-xs font-semibold text-[var(--pista)] hover:underline whitespace-nowrap"
+              className="text-xs font-semibold text-[var(--pista)] hover:underline whitespace-nowrap shrink-0"
             >
               Privacy Policy &rarr;
             </Link>
+          </div>
+        </div>
+
+        {/* Right Column: 3-Device Cascade Showcase with Real Screenshots */}
+        <div className="relative mx-auto h-[480px] w-full max-w-[500px] sm:h-[580px] select-none flex items-center justify-center">
+          {/* Backlight Radial Glow */}
+          <div className="absolute inset-[8%] -z-10 rounded-full bg-[radial-gradient(circle,rgba(107,133,110,0.25),transparent_65%)] blur-2xl" />
+
+          {/* Left Tilted Device */}
+          <button
+            type="button"
+            onClick={swapToLeft}
+            aria-label={`Show ${leftCard.title}`}
+            className="absolute left-0 top-[12%] w-[48%] -rotate-[7deg] rounded-[26px] sm:rounded-[34px] bg-[var(--surface)] p-1.5 sm:p-2 shadow-[0_35px_70px_-20px_rgba(20,31,28,0.25),0_2px_6px_rgba(20,31,28,0.06)] border border-[var(--border)] transition-all duration-500 hover:scale-105 hover:opacity-100 opacity-65 cursor-pointer z-10"
+          >
+            <div className="relative aspect-[1080/2400] w-full rounded-[20px] sm:rounded-[28px] overflow-hidden bg-[#FAF9F5]">
+              <Image
+                src={leftCard.photo}
+                alt={leftCard.title}
+                fill
+                sizes="240px"
+                className="object-cover object-top"
+              />
+            </div>
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-full bg-[var(--surface)]/95 backdrop-blur-md border border-[var(--border)] shadow-xs whitespace-nowrap hidden sm:block">
+              <span className="text-[10px] font-bold text-[var(--ink)]">{leftCard.title}</span>
+            </div>
+          </button>
+
+          {/* Right Tilted Device */}
+          <button
+            type="button"
+            onClick={swapToRight}
+            aria-label={`Show ${rightCard.title}`}
+            className="absolute right-0 top-[16%] w-[48%] rotate-[7deg] rounded-[26px] sm:rounded-[34px] bg-[var(--surface)] p-1.5 sm:p-2 shadow-[0_35px_70px_-20px_rgba(20,31,28,0.25),0_2px_6px_rgba(20,31,28,0.06)] border border-[var(--border)] transition-all duration-500 hover:scale-105 hover:opacity-100 opacity-65 cursor-pointer z-10"
+          >
+            <div className="relative aspect-[1080/2400] w-full rounded-[20px] sm:rounded-[28px] overflow-hidden bg-[#FAF9F5]">
+              <Image
+                src={rightCard.photo}
+                alt={rightCard.title}
+                fill
+                sizes="240px"
+                className="object-cover object-top"
+              />
+            </div>
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-full bg-[var(--surface)]/95 backdrop-blur-md border border-[var(--border)] shadow-xs whitespace-nowrap hidden sm:block">
+              <span className="text-[10px] font-bold text-[var(--ink)]">{rightCard.title}</span>
+            </div>
+          </button>
+
+          {/* Center Dominant Device */}
+          <div className="absolute left-1/2 top-0 z-20 w-[56%] sm:w-[54%] -translate-x-1/2 rounded-[28px] sm:rounded-[36px] bg-[var(--surface)] p-1.5 sm:p-2.5 shadow-[0_45px_90px_-24px_rgba(20,31,28,0.35),0_4px_12px_rgba(20,31,28,0.08)] border border-[var(--border-strong)] transition-all duration-500">
+            <div className="relative aspect-[1080/2400] w-full rounded-[22px] sm:rounded-[30px] overflow-hidden bg-[#FAF9F5]">
+              <Image
+                key={centerCard.id}
+                src={centerCard.photo}
+                alt={centerCard.title}
+                fill
+                sizes="340px"
+                className="object-cover object-top"
+                priority
+              />
+              {/* Subtle specular reflection */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.05] to-transparent pointer-events-none" />
+            </div>
+
+            {/* Bottom floating badge */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-1.5 rounded-full bg-[var(--surface)]/95 backdrop-blur-md border border-[var(--border)] shadow-md whitespace-nowrap flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-[var(--pista)] animate-pulse" />
+              <span className="text-[11px] font-bold text-[var(--ink)]">{centerCard.badge}</span>
+            </div>
+          </div>
+
+          {/* Interactive Navigation Chevron Arrows */}
+          <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3 z-30">
+            <button
+              type="button"
+              onClick={swapToLeft}
+              aria-label="Previous screen"
+              className="w-9 h-9 rounded-full bg-[var(--surface)] border border-[var(--border)] shadow-xs flex items-center justify-center text-[var(--ink)] hover:bg-[var(--surface2)] transition-all"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <div className="flex items-center gap-1.5">
+              {HERO_SCREENS.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setCenterIndex(i)}
+                  className={`h-2 rounded-full transition-all ${
+                    i === centerIndex ? 'w-6 bg-[var(--pista)]' : 'w-2 bg-[var(--border-strong)]'
+                  }`}
+                  aria-label={`Jump to screen ${i + 1}`}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              onClick={swapToRight}
+              aria-label="Next screen"
+              className="w-9 h-9 rounded-full bg-[var(--surface)] border border-[var(--border)] shadow-xs flex items-center justify-center text-[var(--ink)] hover:bg-[var(--surface2)] transition-all"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </div>

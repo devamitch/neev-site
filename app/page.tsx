@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { siteConfig } from '@/lib/site'
 import { SiteHeader } from '@/components/SiteHeader'
 import { HeroSection } from '@/components/HeroSection'
+import { ScreensShowcase } from '@/components/ScreensShowcase'
 import { InteractiveMobileShowcase } from '@/components/InteractiveMobileShowcase'
 import { GoogleSyncInteractiveDemo } from '@/components/GoogleSyncInteractiveDemo'
 import { FeatureBento } from '@/components/FeatureBento'
@@ -19,16 +20,20 @@ export default function Page() {
     <>
       <SiteHeader />
       <main id="top" className="min-h-screen bg-[var(--bg)] text-[var(--ink)]">
+        {/* World-Class 2-Column Hero with 3-Device Cascade Carousel */}
         <HeroSection />
 
         <div className="mx-auto flex w-full max-w-6xl flex-col gap-16 px-4 pb-24 sm:gap-24 sm:px-6 lg:px-8">
+          {/* Inside the Sanctuary App Showcase with Real Android Screenshots */}
+          <ScreensShowcase />
+
           {/* Interactive Mobile Device Simulator */}
           <InteractiveMobileShowcase />
 
           {/* Interactive Google Workspace Synchronization Pipeline */}
           <GoogleSyncInteractiveDemo />
 
-          {/* Feature Bento Architecture */}
+          {/* Feature Bento Architecture with Authentic Visual Cards */}
           <FeatureBento />
 
           {/* 3D Spatial Radar & Offline Tile Maps */}

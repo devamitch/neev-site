@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Calendar, Shield, Sparkles, MapPin, Heart, BookOpen, Layers, Check } from 'lucide-react'
 
 export function FeatureBento() {
@@ -8,6 +9,7 @@ export function FeatureBento() {
       description: 'Export family rituals, doctor visits, and school preparation directly to Google Calendar and Google Tasks. Strictly verified under the Google Limited Use clause.',
       icon: Calendar,
       badge: 'Google Limited Use',
+      image: '/assets/illustrations/neev_functions_rituals.png',
       accent: 'var(--pista)',
       colSpan: 'md:col-span-2',
       details: [
@@ -22,6 +24,7 @@ export function FeatureBento() {
       description: 'Record voice memories of grandparents, document heirloom cooking techniques, and store family archives that live beyond ephemeral chat threads.',
       icon: BookOpen,
       badge: 'Heirloom Archive',
+      image: '/assets/illustrations/neev_heirloom_vault.png',
       accent: 'var(--terracotta)',
       colSpan: 'md:col-span-1',
       details: [
@@ -35,6 +38,7 @@ export function FeatureBento() {
       description: 'OpenStreetMap cartography with hardware spatial telemetry. Classify physical plane elevation (table vs. cushion) and acoustic burst detection.',
       icon: MapPin,
       badge: '100% Free Cartography',
+      image: '/assets/illustrations/radar-empty.webp',
       accent: 'var(--pista)',
       colSpan: 'md:col-span-1',
       details: [
@@ -48,6 +52,7 @@ export function FeatureBento() {
       description: 'Co-manage immunization schedules, dental checkups, and school milestones with clarity. No more forgotten permissions or duplicated pharmacy runs.',
       icon: Heart,
       badge: 'Pediatric Care',
+      image: '/assets/illustrations/neev_tree_sanctuary.png',
       accent: 'var(--terracotta)',
       colSpan: 'md:col-span-2',
       details: [
@@ -59,7 +64,7 @@ export function FeatureBento() {
   ]
 
   return (
-    <section id="features" className="py-16 scroll-mt-20">
+    <section id="features" className="py-20 md:py-28 scroll-mt-20">
       <div className="text-center max-w-2xl mx-auto mb-16">
         <span className="text-xs font-mono uppercase tracking-widest text-[var(--terracotta)] font-semibold block mb-2">
           Sanctuary Architecture
@@ -67,7 +72,7 @@ export function FeatureBento() {
         <h2 className="font-serif text-3xl sm:text-5xl font-bold text-[var(--ink)] mb-4 leading-tight">
           Engineered for Living Harmony
         </h2>
-        <p className="text-sm sm:text-base text-[var(--ink-secondary)] font-light">
+        <p className="text-sm sm:text-base text-[var(--ink-secondary)] font-light leading-relaxed">
           A coherent suite of tools designed around the real-world dynamics of modern Indian multi-generational homes.
         </p>
       </div>
@@ -78,22 +83,35 @@ export function FeatureBento() {
           return (
             <div
               key={idx}
-              className={`sanctuary-card p-6 sm:p-8 flex flex-col justify-between ${card.colSpan} hover:border-[var(--border-strong)] transition-all`}
+              className={`sanctuary-card p-6 sm:p-8 flex flex-col justify-between ${card.colSpan} hover:border-[var(--border-strong)] transition-all overflow-hidden group`}
             >
               <div>
-                <div className="flex items-center justify-between mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-[var(--surface2)] border border-[var(--border)] flex items-center justify-center text-[var(--pista)]">
-                    <Icon className="w-5 h-5" />
+                {/* Visual Header Thumbnail */}
+                <div className="relative h-44 w-full rounded-2xl overflow-hidden mb-6 bg-[var(--surface2)] border border-[var(--border)]">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--surface)]/90 via-transparent to-transparent" />
+                  <div className="absolute top-3 right-3">
+                    <span className="px-3 py-1 rounded-full bg-[var(--surface)]/95 backdrop-blur-md text-[var(--pista-hover)] text-[10px] font-mono font-semibold uppercase border border-[var(--border)] shadow-xs">
+                      {card.badge}
+                    </span>
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-[var(--pista-container)] text-[var(--pista-hover)] text-[10px] font-mono font-semibold uppercase">
-                    {card.badge}
-                  </span>
+                  <div className="absolute bottom-3 left-3">
+                    <div className="w-10 h-10 rounded-xl bg-[var(--surface)]/95 backdrop-blur-md border border-[var(--border)] flex items-center justify-center text-[var(--pista)] shadow-xs">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                  </div>
                 </div>
 
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-[var(--ink)] mb-1">
                   {card.title}
                 </h3>
-                <p className="text-xs font-mono text-[var(--terracotta)] mb-4">
+                <p className="text-xs font-mono text-[var(--terracotta)] mb-3">
                   {card.subtitle}
                 </p>
                 <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed mb-6">
