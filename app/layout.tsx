@@ -133,7 +133,7 @@ const jsonLd = {
         '@type': 'Organization',
         name: siteConfig.name,
         url: siteConfig.url,
-        logo: `${siteConfig.url}/apple-touch-icon.png`,
+        logo: `${siteConfig.url}/logo.png`,
       },
       inLanguage: 'en-IN',
     },

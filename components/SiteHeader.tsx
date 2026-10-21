@@ -13,10 +13,10 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--pista-container)] border border-[var(--pista)]/20 overflow-hidden shadow-none transition-transform group-hover:scale-105">
             <Image
-              src="/favicon.png"
+              src="/logo.png"
               alt="Neev Sanctuary Emblem"
-              width={26}
-              height={26}
+              width={32}
+              height={32}
               className="object-contain"
             />
           </div>
