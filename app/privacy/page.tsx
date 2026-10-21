@@ -241,75 +241,13 @@ export default function PrivacyPage() {
                   </p>
                 </div>
 
-                {/* Scope 3: Drive */}
-                <div className="p-5 rounded-2xl bg-[var(--surface2)] border border-[var(--border)]">
-                  <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
-                    <span className="font-mono text-xs font-bold text-[var(--pista)]">
-                      https://www.googleapis.com/auth/drive.file &amp; drive.readonly
-                    </span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[var(--surface)] border border-[var(--border)]">
-                      Google Drive API · Heirloom Vault Backup
-                    </span>
-                  </div>
-                  <p className="text-xs text-[var(--ink)] mb-2">
-                    <strong>User Benefit &amp; Functionality:</strong> Allows users to create a private backup of their family document vault (oral folklore audio files, heirloom recipes, emergency identity cards) directly in their personal Google Drive storage.
-                  </p>
-                  <p className="text-xs text-[var(--ink-muted)]">
-                    <strong>Access Level &amp; Data Handled:</strong> Strictly restricted via <code className="font-mono">drive.file</code> to files and folders created or opened by Neev Sanctuary. We have zero technical access to other files in your Google Drive.
-                  </p>
-                </div>
-
-                {/* Scope 4: Docs & Sheets */}
-                <div className="p-5 rounded-2xl bg-[var(--surface2)] border border-[var(--border)]">
-                  <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
-                    <span className="font-mono text-xs font-bold text-[var(--pista)]">
-                      Google Docs &amp; Google Sheets APIs
-                    </span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[var(--surface)] border border-[var(--border)]">
-                      Docs &amp; Sheets APIs · Export-Only Tools
-                    </span>
-                  </div>
-                  <p className="text-xs text-[var(--ink)] mb-2">
-                    <strong>User Benefit &amp; Functionality:</strong> Enables one-click export of family memory books into formatted Google Docs, and family monthly grocery or utility budgets into Google Sheets for collaborative review.
-                  </p>
-                  <p className="text-xs text-[var(--ink-muted)]">
-                    <strong>Access Level:</strong> Write-only export operations. Neev does not continuously ingest or parse your private spreadsheets or documents.
-                  </p>
-                </div>
-
-                {/* Scope 5: People / Contacts */}
-                <div className="p-5 rounded-2xl bg-[var(--surface2)] border border-[var(--border)]">
-                  <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
-                    <span className="font-mono text-xs font-bold text-[var(--pista)]">
-                      https://www.googleapis.com/auth/contacts.readonly
-                    </span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[var(--surface)] border border-[var(--border)]">
-                      People API · Family Circle Contact Picker
-                    </span>
-                  </div>
-                  <p className="text-xs text-[var(--ink)] mb-2">
-                    <strong>User Benefit &amp; Functionality:</strong> Allows family administrators to select trusted relatives (grandparents, siblings, pediatricians) to invite to their family sanctuary without manually typing phone numbers or email addresses.
-                  </p>
-                  <p className="text-xs text-[var(--ink-muted)]">
-                    <strong>Access Level:</strong> Ephemeral read access during invitation picker workflows. Contacts are never saved to advertising lists or third-party CRM databases.
-                  </p>
-                </div>
-
-                {/* Scope 6: Google Meet */}
-                <div className="p-5 rounded-2xl bg-[var(--surface2)] border border-[var(--border)]">
-                  <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
-                    <span className="font-mono text-xs font-bold text-[var(--pista)]">
-                      Google Meet API
-                    </span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[var(--surface)] border border-[var(--border)]">
-                      Meet API · Family Video Circle
-                    </span>
-                  </div>
-                  <p className="text-xs text-[var(--ink)] mb-2">
-                    <strong>User Benefit &amp; Functionality:</strong> Generates instant, secure Google Meet links for scheduled multi-city Sunday family calls, milestone celebrations, and remote puja gatherings.
-                  </p>
-                  <p className="text-xs text-[var(--ink-muted)]">
-                    <strong>Access Level:</strong> Meeting creation API only. Neev never records, accesses, or eavesdrops on audio/video streams of your family calls.
+                {/* Explicit Non-Access Statement for Broad Scopes */}
+                <div className="p-4 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
+                  <span className="text-xs font-bold text-[var(--ink)] block mb-1">
+                    Strict Scope Minimization: No Google Drive, Contacts, or Gmail Scopes Requested
+                  </span>
+                  <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
+                    In strict compliance with the Principle of Minimum Scopes (support.google.com/cloud/answer/13807380), Neev Sanctuary does <strong>not</strong> request broad Google Drive access (<code className="font-mono text-xs">drive</code>, <code className="font-mono text-xs">drive.readonly</code>), Google Contacts access, or Gmail access. Our application operates solely with identity scopes (<code className="font-mono text-xs">openid, email, profile</code>) and optional, user-initiated exports to Google Calendar (<code className="font-mono text-xs">calendar.events</code>) and Google Tasks (<code className="font-mono text-xs">tasks</code>).
                   </p>
                 </div>
 

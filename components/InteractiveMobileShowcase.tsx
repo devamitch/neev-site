@@ -119,7 +119,7 @@ export function InteractiveMobileShowcase() {
                           Google Calendar &amp; Tasks Linked
                         </span>
                         <span className="text-[9px] font-mono text-[var(--pista)]">
-                          Limited Use Verified · Zero AI Training
+                          Limited Use Compliant · Zero AI Training
                         </span>
                       </div>
                     </div>

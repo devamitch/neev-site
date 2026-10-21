@@ -182,7 +182,7 @@ export function HeroSection() {
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[var(--pista)] shrink-0" />
                 <span className="text-xs font-bold text-[var(--ink)]">
-                  Google Workspace Integration · Limited Use Verified
+                  Google Workspace Integration · Limited Use Compliant
                 </span>
               </div>
               <p className="text-[11px] text-[var(--ink-secondary)] leading-relaxed">
