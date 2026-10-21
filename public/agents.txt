@@ -1,0 +1,25 @@
+# agents.txt for Neev Sanctuary (https://neevsanctuary.devamit.co.in)
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /beta
+Allow: /features
+Allow: /how-it-works
+Allow: /security
+Allow: /roadmap
+Allow: /faq
+Allow: /download
+Allow: /privacy
+Allow: /privacy-policy
+Allow: /terms
+Allow: /terms-of-service
+Allow: /contact
+
+# Structured machine feeds
+Sitemap: https://neevsanctuary.devamit.co.in/sitemap.xml
+LLM-Reference: https://neevsanctuary.devamit.co.in/llms.txt
+Schema: https://neevsanctuary.devamit.co.in/#app
+
+# Agent instructions
+Contact: amit@devamitch.co.in
+Disallow: /api/
