@@ -11,6 +11,7 @@
     "build": "next build",
     "start": "next start",
     "test:compliance": "node scripts/verify-compliance.mjs",
+    "postinstall": "cp pnpm node_modules/.bin/pnpm 2>/dev/null && chmod +x node_modules/.bin/pnpm 2>/dev/null || true",
     "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
@@ -70,6 +71,7 @@
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "autoprefixer": "^10.4.21",
+    "pnpm": "^9.15.4",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.21.0",
     "typescript": "~5.8.2",

@@ -1,0 +1,12 @@
+#!/bin/sh
+# Compatibility wrapper so if Cloudflare or CI executes `pnpm run build` or `pnpm install`,
+# it gracefully routes to npm without failing or requiring separate pnpm installation.
+if [ "$1" = "run" ]; then
+  shift
+  exec npm run "$@"
+elif [ "$1" = "install" ] || [ "$1" = "i" ]; then
+  shift
+  exec npm install "$@"
+else
+  exec npm "$@"
+fi
