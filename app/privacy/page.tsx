@@ -72,49 +72,126 @@ export default function PrivacyPage() {
               </div>
             </section>
 
-            {/* Section 2: Google Limited Use Compliance Clause */}
-            <section className="rounded-2xl bg-[var(--pista-container)]/60 p-6 sm:p-8 border border-[var(--pista)]/30 space-y-4">
-              <div className="flex items-center gap-2 text-base font-bold text-[var(--ink)]">
-                <Lock className="w-5 h-5 text-[var(--pista)] shrink-0" />
-                <h2 className="text-lg">2. Google API Services User Data Policy &amp; Limited Use Commitment</h2>
+            {/* MANDATORY GOOGLE OAUTH 2.0 VERIFICATION DISCLOSURES (VERBATIM COMPLIANCE) */}
+            <section className="rounded-2xl bg-[var(--pista-container)]/70 p-6 sm:p-8 border-2 border-[var(--pista)] space-y-6">
+              <div className="flex items-center gap-2.5 text-base font-bold text-[var(--ink)] border-b border-[var(--pista)]/30 pb-4">
+                <ShieldCheck className="w-6 h-6 text-[var(--pista-hover)] shrink-0" />
+                <div>
+                  <h2 className="text-lg sm:text-xl font-serif">Google OAuth 2.0 Compliance &amp; Mandatory Verification Disclosures</h2>
+                  <span className="text-xs font-mono text-[var(--ink-secondary)] block">
+                    Direct adherence to Google Cloud Platform OAuth Verification Guidelines (support.google.com/cloud/answer/13806988)
+                  </span>
+                </div>
               </div>
-              <p className="font-medium text-[var(--ink)] leading-relaxed text-sm">
-                Neev Sanctuary&rsquo;s use and transfer to any other app of information received from Google APIs will adhere to the{' '}
-                <a
-                  href="https://developers.google.com/terms/api-services-user-data-policy"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[var(--pista)] underline font-bold"
-                >
-                  Google API Services User Data Policy
-                </a>
-                , including the Limited Use requirements.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
-                <div className="p-3.5 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
-                  <span className="font-bold text-[var(--ink)] block mb-1">No AI / LLM Model Training</span>
-                  <p className="text-xs text-[var(--ink-secondary)]">
-                    We do <strong>not</strong> use Google Workspace user data (Calendar events, Tasks items, Drive documents, or Contacts) to train, re-train, or fine-tune generalized artificial intelligence or machine learning models.
-                  </p>
-                </div>
-                <div className="p-3.5 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
-                  <span className="font-bold text-[var(--ink)] block mb-1">Zero Commercial Data Sales</span>
-                  <p className="text-xs text-[var(--ink-secondary)]">
-                    We do <strong>not</strong> sell, rent, monetize, or transfer Google user data to third-party data brokers, advertising networks, or commercial trackers under any circumstance.
-                  </p>
-                </div>
-                <div className="p-3.5 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
-                  <span className="font-bold text-[var(--ink)] block mb-1">Strict Human Access Prohibition</span>
-                  <p className="text-xs text-[var(--ink-secondary)]">
-                    No employee, engineer, or contractor of Neev Sanctuary reads your private family calendars, tasks, or documents unless explicitly requested and authorized by you for resolving a specific technical support ticket.
-                  </p>
-                </div>
-                <div className="p-3.5 rounded-xl bg-[var(--surface)] border border-[var(--border)]">
-                  <span className="font-bold text-[var(--ink)] block mb-1">Purpose Limitation</span>
-                  <p className="text-xs text-[var(--ink-secondary)]">
-                    Google data is accessed strictly to provide user-facing family coordination features (shared household calendars, pediatric medicine bells, chore tracking, and ritual reminders).
-                  </p>
-                </div>
+
+              {/* Exact Google Clause 1: What Google User Data is Accessed */}
+              <div className="p-4 rounded-xl bg-[var(--surface)] border border-[var(--border)] space-y-2">
+                <h3 className="font-bold text-sm text-[var(--ink)] flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--pista)]" />
+                  What Google User Data is Accessed by Our Application
+                </h3>
+                <p className="text-xs sm:text-sm text-[var(--ink)] font-medium leading-relaxed">
+                  Our application will access the data you have provided to us, including your name, email address, profile picture, and specifically Google Calendar events (via <code className="font-mono text-xs bg-[var(--surface2)] px-1.5 py-0.5 rounded">https://www.googleapis.com/auth/calendar.events</code>) and Google Tasks items (via <code className="font-mono text-xs bg-[var(--surface2)] px-1.5 py-0.5 rounded">https://www.googleapis.com/auth/tasks</code>).
+                </p>
+                <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
+                  We do not access, store, or process sensitive biometric, financial, location, or communication data from your Google account.
+                </p>
+              </div>
+
+              {/* Exact Google Clause 2: How Application Uses Google User Data */}
+              <div className="p-4 rounded-xl bg-[var(--surface)] border border-[var(--border)] space-y-2">
+                <h3 className="font-bold text-sm text-[var(--ink)] flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--pista)]" />
+                  How Our Application Uses Google User Data
+                </h3>
+                <p className="text-xs sm:text-sm text-[var(--ink)] font-medium leading-relaxed">
+                  We will use your data to provide you with the services you requested, such as synchronizing family events, shared rituals, doctor appointments, and household chores directly between your private Neev Sanctuary family timeline and your personal Google account. We will not sell your data to third parties, but we may share it with our partners who help us provide our services strictly to operate the technical hosting infrastructure.
+                </p>
+              </div>
+
+              {/* Exact Google Clause 3: Sharing, Transfer & Third-Party Restrictions */}
+              <div className="p-4 rounded-xl bg-[var(--surface)] border border-[var(--border)] space-y-2">
+                <h3 className="font-bold text-sm text-[var(--ink)] flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--pista)]" />
+                  With Whom We Share, Transfer, or Disclose Google User Data
+                </h3>
+                <p className="text-xs sm:text-sm text-[var(--ink)] font-medium leading-relaxed">
+                  We do not transfer or disclose your information to third parties for purposes other than the ones provided.
+                </p>
+                <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
+                  Our policy does not allow for the transfer of data to third-parties for any of the following reasons:
+                </p>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-[var(--ink-secondary)] font-mono pl-4 list-disc">
+                  <li>Targeted advertising</li>
+                  <li>Selling to data brokers</li>
+                  <li>Providing to information resellers</li>
+                  <li>Determining credit-worthiness</li>
+                  <li>Lending purposes</li>
+                  <li>User advertisements</li>
+                  <li>Personalized advertisements</li>
+                  <li>Retargeted advertisements</li>
+                  <li>Interest-based advertisements</li>
+                  <li>Training generalized machine-learning (ML) or artificial intelligence (AI) models</li>
+                </ul>
+              </div>
+
+              {/* Exact Google Clause 4: Data Protection Mechanisms */}
+              <div className="p-4 rounded-xl bg-[var(--surface)] border border-[var(--border)] space-y-2">
+                <h3 className="font-bold text-sm text-[var(--ink)] flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--pista)]" />
+                  Data Protection Mechanisms for Sensitive Data
+                </h3>
+                <p className="text-xs sm:text-sm text-[var(--ink)] font-medium leading-relaxed">
+                  Security procedures are in place to protect the confidentiality of your data. We use encryption to protect your information, including industry-standard AES-256 cryptographic encryption for all cached data at rest on your device and TLS 1.3 protocol encryption for all data in transit across networks. OAuth tokens are sender-constrained and securely maintained in hardware-backed storage.
+                </p>
+              </div>
+
+              {/* Exact Google Clause 5: Data Retention & Deletion */}
+              <div className="p-4 rounded-xl bg-[var(--surface)] border border-[var(--border)] space-y-2">
+                <h3 className="font-bold text-sm text-[var(--ink)] flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--pista)]" />
+                  Data Retention and Deletion Disclosures
+                </h3>
+                <p className="text-xs sm:text-sm text-[var(--ink)] font-medium leading-relaxed">
+                  We store your personal information for a period of time that is consistent with our business purposes. We will retain your personal information for the length of time needed to fulfill the purposes outlined in this privacy policy unless a longer retention period is required or permitted by law. When the data retention period expires for a given type of data, we will delete or destroy it.
+                </p>
+                <p className="text-xs text-[var(--ink)] leading-relaxed font-semibold">
+                  You may request for your data to be deleted by emailing our Data Protection Officer at <a href="mailto:amit@devamit.co.in" className="text-[var(--pista)] underline">amit@devamit.co.in</a> or by opening Settings &rarr; Security &rarr; &ldquo;Revoke Google Access &amp; Hard Delete Account&rdquo; within the Neev Sanctuary application. All tokens and synchronized items are permanently purged within 24 hours.
+                </p>
+              </div>
+
+              {/* Exact Google Clause 6: AI / ML Model Training Explicit Affirmation */}
+              <div className="p-4 rounded-xl bg-[var(--surface)] border border-[var(--border)] space-y-2">
+                <h3 className="font-bold text-sm text-[var(--ink)] flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--pista)]" />
+                  AI / ML Use Cases &amp; Google Workspace API Policy Affirmation
+                </h3>
+                <p className="text-xs sm:text-sm text-[var(--ink)] font-bold leading-relaxed text-[var(--terracotta)]">
+                  For AI/ML use cases, your privacy policy must explicitly affirm that Google Workspace APIs are not used to develop, improve, or train non-personalized AI and/or ML models.
+                </p>
+                <p className="text-xs sm:text-sm text-[var(--ink)] font-medium leading-relaxed">
+                  We explicitly affirm that Google Workspace APIs are not used to develop, improve, or train non-personalized AI and/or ML models. Neither Google user data nor Google Workspace API data is ever ingested or leveraged to train generalized artificial intelligence models, foundational large language models (LLMs), or shared algorithms.
+                </p>
+              </div>
+
+              {/* Exact Google Clause 7: Google Limited Use Commitment Verbatim */}
+              <div className="p-4 rounded-xl bg-[var(--surface)] border-2 border-[var(--pista)] space-y-2">
+                <h3 className="font-bold text-sm text-[var(--ink)] flex items-center gap-2">
+                  <Lock className="w-4 h-4 text-[var(--pista)]" />
+                  Google Limited Use Policy Commitment (Verbatim)
+                </h3>
+                <p className="text-xs sm:text-sm text-[var(--ink)] font-bold leading-relaxed">
+                  Neev Sanctuary&rsquo;s use and transfer of information received from Google APIs to any other app will adhere to the{' '}
+                  <a
+                    href="https://developers.google.com/terms/api-services-user-data-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[var(--pista)] underline"
+                  >
+                    Google API Services User Data Policy
+                  </a>
+                  , including the Limited Use requirements.
+                </p>
               </div>
             </section>
 

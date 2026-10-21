@@ -175,6 +175,78 @@ export function ScreensShowcase() {
             </div>
           </div>
         </div>
+
+        {/* Extended System Architecture & Design Boards Gallery */}
+        <div className="mt-20 pt-16 border-t border-[var(--border)]">
+          <div className="max-w-2xl mb-10 text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--surface2)] text-[var(--terracotta)] text-xs font-mono uppercase tracking-wider mb-3 border border-[var(--border)]">
+              <Sliders className="w-3.5 h-3.5" />
+              <span>Complete Design System &amp; Architecture</span>
+            </div>
+            <h3 className="font-serif text-2xl sm:text-4xl font-bold tracking-tight text-[var(--ink)] mb-3">
+              Screen Inventory &amp; App Architecture Boards
+            </h3>
+            <p className="text-xs sm:text-sm text-[var(--ink-secondary)] leading-relaxed">
+              Explore the full system architecture of Neev Sanctuary — including multi-perspective routing, Picture-in-Picture (PIP) states, panchang ritual scheduling, and local-first cryptographic vaults.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="sanctuary-card p-4 rounded-2xl group hover:border-[var(--border-strong)] transition-all flex flex-col justify-between">
+              <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[var(--surface2)] border border-[var(--border)] mb-3">
+                <img
+                  src="/assets/screens/01_complete_screen_gallery.png"
+                  alt="Complete Screen Gallery"
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono text-[var(--pista-hover)] uppercase font-bold block mb-1">Board 01</span>
+                <h4 className="font-serif text-base font-bold text-[var(--ink)] mb-1">Complete Screen Gallery</h4>
+                <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
+                  High-fidelity layout of all native porcelain screens, raised-cosine bottom docks, and living sprout mascot states.
+                </p>
+              </div>
+            </div>
+
+            <div className="sanctuary-card p-4 rounded-2xl group hover:border-[var(--border-strong)] transition-all flex flex-col justify-between">
+              <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[var(--surface2)] border border-[var(--border)] mb-3">
+                <img
+                  src="/assets/screens/03_app_flow_and_screen_inventory.png"
+                  alt="App Flow and Screen Inventory"
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono text-[var(--terracotta)] uppercase font-bold block mb-1">Board 02</span>
+                <h4 className="font-serif text-base font-bold text-[var(--ink)] mb-1">App Flow &amp; Screen Inventory</h4>
+                <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
+                  End-to-end navigational hierarchy, multi-generational perspective switching, and family invitation lifecycle.
+                </p>
+              </div>
+            </div>
+
+            <div className="sanctuary-card p-4 rounded-2xl group hover:border-[var(--border-strong)] transition-all flex flex-col justify-between">
+              <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden bg-[var(--surface2)] border border-[var(--border)] mb-3">
+                <img
+                  src="/assets/screens/05_features_and_pip_states.png"
+                  alt="Features and PIP States"
+                  className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <span className="text-[10px] font-mono text-[var(--pista-hover)] uppercase font-bold block mb-1">Board 03</span>
+                <h4 className="font-serif text-base font-bold text-[var(--ink)] mb-1">Features &amp; PIP States</h4>
+                <p className="text-xs text-[var(--ink-secondary)] leading-relaxed">
+                  Floating mini-player radar, persistent ritual countdown timer, and background acoustic chirp telemetry.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

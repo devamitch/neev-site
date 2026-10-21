@@ -87,7 +87,7 @@ export function HeroSection() {
           {/* Top Eyebrow Badge */}
           <Link
             href="/beta"
-            className="group mb-6 inline-flex items-center gap-2.5 rounded-full bg-[var(--surface)] py-1.5 pl-2 pr-4 text-[13px] font-medium text-[var(--ink-secondary)] border border-[var(--border)] shadow-xs transition-all hover:border-[var(--border-strong)]"
+            className="group mb-4 inline-flex items-center gap-2.5 rounded-full bg-[var(--surface)] py-1.5 pl-2 pr-4 text-[13px] font-medium text-[var(--ink-secondary)] border border-[var(--border)] shadow-xs transition-all hover:border-[var(--border-strong)]"
           >
             <span className="rounded-full bg-[var(--terracotta)] px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white">
               Family OS Beta
@@ -95,6 +95,31 @@ export function HeroSection() {
             <span>Request sanctuary access for your kutumb</span>
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1 text-[var(--terracotta)]" aria-hidden="true" />
           </Link>
+
+          {/* OFFICIAL GOOGLE OAUTH 2.0 & APPLICATION PURPOSE VERIFICATION STATEMENT */}
+          <div className="mb-6 p-4 rounded-2xl bg-[var(--pista-container)]/80 border border-[var(--pista)] text-left shadow-xs">
+            <div className="flex items-center gap-2 mb-1.5">
+              <ShieldCheck className="w-4 h-4 text-[var(--pista-hover)] shrink-0" />
+              <span className="text-xs font-bold text-[var(--ink)] uppercase tracking-wider font-mono">
+                Application Purpose &amp; Public Access Statement
+              </span>
+            </div>
+            <p className="text-xs text-[var(--ink)] leading-relaxed mb-2 font-medium">
+              <strong>Application Purpose:</strong> Neev Sanctuary is the private Indian Family Operating System engineered for multi-generational joint households (grandparents, parents, and children). It orchestrates shared parenting schedules, synchronizes daily routines and rituals with personal Google Workspace accounts (Calendar &amp; Tasks), and safeguards ancestral family memories.
+            </p>
+            <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] pt-1.5 border-t border-[var(--pista)]/30 text-[var(--ink-secondary)]">
+              <span className="flex items-center gap-1.5 font-medium">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span><strong>Public Website:</strong> No login or authentication required to explore our features and privacy terms.</span>
+              </span>
+              <Link
+                href="/privacy"
+                className="font-bold text-[var(--pista-hover)] hover:underline inline-flex items-center gap-1"
+              >
+                <span>Privacy Policy &amp; Limited Use &rarr;</span>
+              </Link>
+            </div>
+          </div>
 
           {/* Grand Headline */}
           <h1 className="text-balance font-serif text-[clamp(2.75rem,6vw,5.2rem)] font-bold leading-[1.02] tracking-[-0.03em] text-[var(--ink)]">
