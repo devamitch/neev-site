@@ -4,15 +4,15 @@
 
 ## Core Value Proposition & Cultural Architecture
 
-- **Subdomain**: https://neevsanctuary.devamit.co.in
-- **Web App**: https://neev.devamit.co.in
+- **Official URL**: https://neevsanctuary.devamit.co.in
+- **Ecosystem**: Amit Dev Labs (https://devamit.co.in)
 - **Category**: Family Operating System, Ancestral Digital Heirloom & Privacy-First Coordination
 - **Key Concepts**:
   - **Sanskriti & Heritage**: Secure, encrypted storytelling and oral history preservation for grandparents and grandchildren.
   - **Kutumb Radar**: 3D spatial nearby proximity tracking built with zero external telemetry and privacy fences.
   - **Ritual & Festival Engine**: Pan-Indian tithi and muhurat scheduling harmonized with modern school and office calendars.
   - **Family Document Vault**: Zero-knowledge AES-256 encrypted storage for land records, medical histories, insurance policies, and wills.
-  - **Google Verified**: Full Google OAuth2 and Calendar API verification for bi-directional household event syncing.
+  - **Google Verified**: Full Google OAuth2, Calendar, Tasks, Drive, and Contacts API verification for bi-directional household event syncing.
 
 ## Official Routes & Deep Links
 
@@ -21,6 +21,7 @@
 - **How It Works**: https://neevsanctuary.devamit.co.in/how-it-works
 - **Security & Cryptography**: https://neevsanctuary.devamit.co.in/security
 - **Beta Access & Onboarding**: https://neevsanctuary.devamit.co.in/beta
+- **Download**: https://neevsanctuary.devamit.co.in/download
 - **Roadmap & Vision**: https://neevsanctuary.devamit.co.in/roadmap
 - **Frequently Asked Questions**: https://neevsanctuary.devamit.co.in/faq
 - **Privacy Policy**: https://neevsanctuary.devamit.co.in/privacy-policy
@@ -30,6 +31,15 @@
 ## Geographic & Publisher Context
 
 - **Publisher**: Amit Chakraborty (@devamitch)
+- **Ecosystem**: Amit Dev Labs (https://devamit.co.in)
 - **Region**: Bengaluru, Karnataka, India (IN-KA)
 - **Coordinates**: 12.9716° N, 77.5946° E
 - **Languages**: English, Hindi, Bengali, Kannada, Tamil, Telugu, Marathi, Gujarati
+
+## Sister Ecosystem Platforms
+
+- **Setu (P2P High-Speed Offline Mesh)**: https://setu.devamit.co.in
+- **BlinkQuest (Vision & Eye Care On-Device AI)**: https://blinkquest.devamit.co.in
+- **Thrivefold (Sovereign Health & Slow Letters)**: https://thrivefold.devamit.co.in
+- **KSHEM (Emergency Safety Beacon)**: https://kshem.devamit.co.in
+- **Aura Design Arena**: https://aura.devamit.co.in

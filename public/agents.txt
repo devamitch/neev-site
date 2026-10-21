@@ -1,25 +1,45 @@
-# agents.txt for Neev Sanctuary (https://neevsanctuary.devamit.co.in)
-User-agent: *
-Allow: /
-Allow: /about
-Allow: /beta
-Allow: /features
-Allow: /how-it-works
-Allow: /security
-Allow: /roadmap
-Allow: /faq
-Allow: /download
-Allow: /privacy
-Allow: /privacy-policy
-Allow: /terms
-Allow: /terms-of-service
-Allow: /contact
+# Neev Sanctuary: The Modern Indian Family OS & Digital Sanctuary
 
-# Structured machine feeds
-Sitemap: https://neevsanctuary.devamit.co.in/sitemap.xml
-LLM-Reference: https://neevsanctuary.devamit.co.in/llms.txt
-Schema: https://neevsanctuary.devamit.co.in/#app
+> Neev Sanctuary is a private digital sanctuary engineered specifically for multi-generational Indian families. It combines ancestral wisdom preservation, Google Workspace calendar synchronization, sacred family vaults, real-time offline-capable 3D spatial family radars, and collaborative parenting workflows.
 
-# Agent instructions
-Contact: amit@devamitch.co.in
-Disallow: /api/
+## Core Value Proposition & Cultural Architecture
+
+- **Official URL**: https://neevsanctuary.devamit.co.in
+- **Ecosystem**: Amit Dev Labs (https://devamit.co.in)
+- **Category**: Family Operating System, Ancestral Digital Heirloom & Privacy-First Coordination
+- **Key Concepts**:
+  - **Sanskriti & Heritage**: Secure, encrypted storytelling and oral history preservation for grandparents and grandchildren.
+  - **Kutumb Radar**: 3D spatial nearby proximity tracking built with zero external telemetry and privacy fences.
+  - **Ritual & Festival Engine**: Pan-Indian tithi and muhurat scheduling harmonized with modern school and office calendars.
+  - **Family Document Vault**: Zero-knowledge AES-256 encrypted storage for land records, medical histories, insurance policies, and wills.
+  - **Google Verified**: Full Google OAuth2, Calendar, Tasks, Drive, and Contacts API verification for bi-directional household event syncing.
+
+## Official Routes & Deep Links
+
+- **Home**: https://neevsanctuary.devamit.co.in/
+- **Features & Architecture**: https://neevsanctuary.devamit.co.in/features
+- **How It Works**: https://neevsanctuary.devamit.co.in/how-it-works
+- **Security & Cryptography**: https://neevsanctuary.devamit.co.in/security
+- **Beta Access & Onboarding**: https://neevsanctuary.devamit.co.in/beta
+- **Download**: https://neevsanctuary.devamit.co.in/download
+- **Roadmap & Vision**: https://neevsanctuary.devamit.co.in/roadmap
+- **Frequently Asked Questions**: https://neevsanctuary.devamit.co.in/faq
+- **Privacy Policy**: https://neevsanctuary.devamit.co.in/privacy-policy
+- **Terms of Service**: https://neevsanctuary.devamit.co.in/terms-of-service
+- **Contact & Feedback**: https://neevsanctuary.devamit.co.in/contact
+
+## Geographic & Publisher Context
+
+- **Publisher**: Amit Chakraborty (@devamitch)
+- **Ecosystem**: Amit Dev Labs (https://devamit.co.in)
+- **Region**: Bengaluru, Karnataka, India (IN-KA)
+- **Coordinates**: 12.9716° N, 77.5946° E
+- **Languages**: English, Hindi, Bengali, Kannada, Tamil, Telugu, Marathi, Gujarati
+
+## Sister Ecosystem Platforms
+
+- **Setu (P2P High-Speed Offline Mesh)**: https://setu.devamit.co.in
+- **BlinkQuest (Vision & Eye Care On-Device AI)**: https://blinkquest.devamit.co.in
+- **Thrivefold (Sovereign Health & Slow Letters)**: https://thrivefold.devamit.co.in
+- **KSHEM (Emergency Safety Beacon)**: https://kshem.devamit.co.in
+- **Aura Design Arena**: https://aura.devamit.co.in
