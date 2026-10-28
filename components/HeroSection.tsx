@@ -7,9 +7,9 @@ const PROMISES = [
   'Google Calendar & Tasks synced',
 ]
 
-const APP_SCREEN_HOME = '/assets/app/01_dashboard_sanctuary.png'
-const APP_SCREEN_RITUALS = '/assets/illustrations/neev_functions_rituals.png'
-const APP_SCREEN_VAULT = '/assets/illustrations/neev_heirloom_vault.png'
+const APP_SCREEN_HOME = '/screenshots/01_one_home_sanctuary.png'
+const APP_SCREEN_RITUALS = '/screenshots/03_plan_together_rituals.png'
+const APP_SCREEN_VAULT = '/screenshots/04_preserve_memory_vault.png'
 
 export function HeroSection() {
   return (
@@ -85,17 +85,17 @@ export function HeroSection() {
 function PhoneCard({ src, className, priority }: { src: string; className: string; priority?: boolean }) {
   return (
     <div
-      className={`absolute overflow-hidden rounded-[32px] bg-[var(--surface)] p-2 sm:rounded-[40px] sm:p-2.5 ${className}`}
+      className={`absolute overflow-hidden rounded-[24px] sm:rounded-[32px] shadow-2xl shadow-black/12 transition-transform duration-500 hover:-translate-y-2 border-none ${className}`}
     >
       <img
         src={src}
-        alt=""
-        width={576}
-        height={1024}
+        alt="Neev Family Sanctuary"
+        width={1080}
+        height={1920}
         fetchPriority={priority ? 'high' : 'auto'}
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
-        className="aspect-[9/16] w-full rounded-[24px] object-cover sm:rounded-[32px]"
+        className="aspect-[9/16] w-full object-cover rounded-[24px] sm:rounded-[32px] block"
       />
     </div>
   )

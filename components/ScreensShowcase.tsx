@@ -1,19 +1,18 @@
 'use client'
 
 import { useState } from 'react'
-import { PhoneFrame } from '@/components/PhoneFrame'
-import { Calendar, Shield, Heart, Compass, Sliders, CheckCircle2, Lock, ArrowRight, Layers, Maximize2 } from 'lucide-react'
+import { Calendar, Shield, Heart, Compass, Sliders, CheckCircle2, Layers, Maximize2, Sparkles } from 'lucide-react'
 
 const screens = [
   {
     id: 'dashboard',
     title: 'Sanctuary Living Dashboard',
-    label: 'Multi-Generational Hub',
+    label: 'One Home for Family',
     icon: Layers,
-    src: '/assets/app/01_dashboard_sanctuary.png',
-    tagline: 'Apple Large Title & Living Sprout Mascot',
+    src: '/screenshots/01_one_home_sanctuary.png',
+    tagline: 'Multi-Generational Harmony & Living Sprout',
     description:
-      'The calm daily hearth for joint families. Features a living animated mascot with organic breathing cycles, quick perspective switcher for elders and parents, and upcoming festival tithis with Google Calendar indicators.',
+      'The calm daily hearth for joint families. Features a living animated mascot with organic breathing cycles, quick perspective switcher for elders, parents, and kids, and upcoming festival tithis with Google Calendar indicators.',
     highlights: [
       'Pista & Terracotta authentic color harmonies',
       'One-tap switch between Grandparents, Parents, and Kids',
@@ -21,11 +20,26 @@ const screens = [
     ],
   },
   {
+    id: 'radar',
+    title: 'Kutumb Live Radar Map',
+    label: 'Stay Close Everywhere',
+    icon: Compass,
+    src: '/screenshots/02_stay_close_radar_map.png',
+    tagline: 'Offline-First Spatial Telemetry',
+    description:
+      'Peer-to-peer proximity telemetry built with free OpenStreetMap cartography. Classifies physical elevation (table plane vs sofa cushion depth) and emits acoustic chirps to find misplaced phones without cellular service.',
+    highlights: [
+      'Zero continuous GPS tracking uploaded to cloud servers',
+      'Acoustic penetration for sofa cushions and divans',
+      '100% free cartography with zero Google Maps billing',
+    ],
+  },
+  {
     id: 'rituals',
     title: 'Sacred Rituals & Panchang',
-    label: 'Festival & Muhurat Engine',
+    label: 'Plan Together, Celebrate',
     icon: Calendar,
-    src: '/assets/illustrations/neev_functions_rituals.png',
+    src: '/screenshots/03_plan_together_rituals.png',
     tagline: 'Pan-Indian Tithis & Chores',
     description:
       'Harmonizes regional panchang dates (Ekadashi, Purnima, Diwali, Chhath Puja) with modern school and office schedules. Co-parents can delegate puja prep and chores directly to Google Tasks.',
@@ -38,46 +52,46 @@ const screens = [
   {
     id: 'vault',
     title: 'Sanskriti Heirloom Vault',
-    label: 'Oral Folklore & Recipes',
+    label: 'Preserve What Matters',
     icon: Heart,
-    src: '/assets/illustrations/neev_heirloom_vault.png',
-    tagline: 'Preserving Generational Wisdom',
+    src: '/screenshots/04_preserve_memory_vault.png',
+    tagline: 'Generational Wisdom & Folklore',
     description:
       'A permanent digital sanctuary for oral histories. Record Dada and Dadi’s childhood stories, store grandmother’s handwritten secret recipes, and safeguard family property deeds under AES-256 hardware encryption.',
     highlights: [
       'Lossless audio recording with visual waveform player',
-      'Private family archive not shared with any third party',
+      'Private family archive never shared with third parties',
       'Local encrypted backup with hardware keystore security',
     ],
   },
   {
-    id: 'settings',
-    title: 'Sovereignty & Security Controls',
-    label: 'Hard Keystore Encryption',
+    id: 'functions',
+    title: 'Family Functions & Celebrations',
+    label: 'Celebrations & Milestones',
     icon: Sliders,
-    src: '/assets/app/05_sanctuary_settings_theme.png',
-    tagline: 'Absolute User Ownership',
+    src: '/screenshots/05_plan_celebrate_functions.png',
+    tagline: 'Plan, Celebrate, Stay Together',
     description:
-      'Control your family’s digital footprint with total transparency. Toggle theme aesthetics, inspect hardware keystore security, manage Google OAuth permissions, or perform an instant one-tap hard deletion of your sanctuary.',
+      'Keep track of all upcoming family occasions, milestones, and pooja functions. Shared invitations, duty delegations, and synchronized calendar alerts for everyone in the family.',
     highlights: [
-      'Local MMKV database with hardware-backed encryption',
-      'Immediate Google OAuth revocation & disconnect controls',
-      'Irreversible hard deletion wipes all local and cloud records',
+      'Multi-household coordinated event planner',
+      'Automated reminders for birthdays, anniversaries & vrats',
+      'Seamless Google Calendar synchronization',
     ],
   },
   {
-    id: 'radar',
-    title: 'Kutumb 3D Spatial Radar',
-    label: 'Offline Proximity Mesh',
-    icon: Compass,
-    src: '/assets/illustrations/neev_sanctuary_home.png',
-    tagline: 'Zero Cloud GPS Telemetry',
+    id: 'growth',
+    title: 'Everyday Family Bonds',
+    label: 'More Together, Every Day',
+    icon: Shield,
+    src: '/screenshots/06_more_together_everyday.png',
+    tagline: 'Mindful Growth & Well-Being',
     description:
-      'Peer-to-peer proximity telemetry built with free OpenStreetMap cartography. Classifies physical elevation (table plane vs sofa cushion depth) and emits acoustic chirps to find misplaced phones without cellular service.',
+      'Cultivate everyday closeness with gentle reminders, shared moments, and family gratitude. Free from social media comparison, commercial feeds, or intrusive surveillance.',
     highlights: [
-      'Zero continuous GPS tracking uploaded to cloud servers',
-      'Acoustic penetration for sofa cushions and divans',
-      '100% free cartography with zero Google Maps billing',
+      'Zero ads, zero algorithmic feed, 100% privacy',
+      'Culturally grounded in Indian joint family traditions',
+      'Private family network with cryptographic invite keys',
     ],
   },
 ]
@@ -142,17 +156,28 @@ export function ScreensShowcase() {
     <section id="screens" className="py-20 md:py-32 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Editorial Heading */}
-        <div className="max-w-2xl mb-14 text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--pista-container)] text-[var(--pista-hover)] text-xs font-mono uppercase tracking-wider mb-4">
+        <div className="max-w-2xl mb-10 text-left">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[var(--pista-container)] text-[var(--pista-hover)] text-xs font-mono uppercase tracking-wider mb-4 border-none">
             <Layers className="w-3.5 h-3.5" />
-            <span>Captured from Native Android Builds</span>
+            <span>Official Play Store &amp; Fastlane Editions</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-[var(--ink)] leading-tight mb-4">
             Inside the Sanctuary App
           </h2>
           <p className="text-sm sm:text-base text-[var(--ink-secondary)] leading-relaxed font-light">
-            Every screen captured directly from our live Android and iOS release builds. Authentic light-mode porcelain surfaces, zero-shadow squircles, and cultural warmth.
+            Crafted for multi-generational Indian families. Authentic porcelain surfaces, calm sacred spaces, offline-first privacy, and zero algorithmic distractions.
           </p>
+        </div>
+
+        {/* Full Feature Banner: One Home for Family */}
+        <div className="mb-14 overflow-hidden rounded-[28px] sm:rounded-[36px] bg-[var(--surface)] shadow-2xl shadow-black/8 border-none group">
+          <img
+            src="/screenshots/feature-graphic-hero.png"
+            alt="Neev: One Home for Family"
+            width={1795}
+            height={876}
+            className="w-full h-auto object-cover rounded-[28px] sm:rounded-[36px] block border-none group-hover:scale-[1.01] transition-transform duration-700 ease-out"
+          />
         </div>
 
         {/* 2-Column Walkthrough */}
@@ -166,9 +191,9 @@ export function ScreensShowcase() {
                 <button
                   key={screen.id}
                   onClick={() => setActiveIndex(idx)}
-                  className={`w-full text-left p-6 sm:p-7 rounded-[28px] transition-all cursor-pointer ${
+                  className={`w-full text-left p-6 sm:p-7 rounded-[28px] transition-all cursor-pointer border-none ${
                     isSelected
-                      ? 'bg-[var(--surface)] text-[var(--ink)]'
+                      ? 'bg-[var(--surface)] text-[var(--ink)] shadow-md shadow-black/5'
                       : 'bg-[var(--surface2)]/60 text-[var(--ink-secondary)] hover:bg-[var(--surface)]'
                   }`}
                 >
@@ -207,21 +232,23 @@ export function ScreensShowcase() {
             })}
           </div>
 
-          {/* Right Column: Precision Titanium Phone Frame */}
+          {/* Right Column: Borderless High-Resolution Marketing Poster */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-[320px] sm:max-w-[340px]">
-              <PhoneFrame
-                key={activeScreen.id}
-                src={activeScreen.src}
-                alt={`Neev Sanctuary screen: ${activeScreen.title}`}
-                priority
-              />
+            <div className="w-full max-w-[340px] sm:max-w-[380px]">
+              <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[28px] sm:rounded-[36px] bg-[var(--surface)] shadow-2xl shadow-black/10 transition-all duration-500 ease-out hover:-translate-y-1.5 border-none">
+                <img
+                  key={activeScreen.id}
+                  src={activeScreen.src}
+                  alt={`Neev Sanctuary: ${activeScreen.title}`}
+                  className="w-full h-full object-cover rounded-[28px] sm:rounded-[36px] block border-none animate-fadeIn"
+                />
+              </div>
               <div className="mt-5 text-center space-y-1">
                 <span className="text-xs font-mono text-[var(--ink-muted)] block">
-                  Captured on Physical Pixel / Motorola Hardware
+                  Official Play Store &amp; Fastlane Release Poster
                 </span>
                 <span className="text-[10px] font-mono text-[var(--terracotta)] uppercase font-semibold">
-                  100% Native Expo &amp; React Native Release
+                  100% Native Multi-Generational Sanctuary
                 </span>
               </div>
             </div>
