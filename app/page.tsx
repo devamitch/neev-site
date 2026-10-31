@@ -6,6 +6,7 @@ import { ScreensShowcase } from '@/components/ScreensShowcase'
 import { FeatureBento } from '@/components/FeatureBento'
 import { SpatialRadarShowcase } from '@/components/SpatialRadarShowcase'
 import { FaqSection } from '@/components/FaqSection'
+import { EcosystemDirectorySection } from '@/components/EcosystemDirectorySection'
 import { BetaSignupSection } from '@/components/BetaSignupSection'
 import { SiteFooter } from '@/components/SiteFooter'
 
@@ -33,6 +34,9 @@ export default function Page() {
 
           {/* Comprehensive FAQ Section */}
           <FaqSection />
+
+          {/* Ecosystem Apps & Beta Community */}
+          <EcosystemDirectorySection />
 
           {/* Beta Waitlist Registration */}
           <BetaSignupSection />
