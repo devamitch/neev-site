@@ -9,6 +9,8 @@ export const siteConfig = {
   appPackage: 'com.amit.neev',
   appScheme: 'neev://',
   playStoreUrl: 'https://play.google.com/store/apps/details?id=com.amit.neev',
+  playStoreBetaUrl: 'https://play.google.com/apps/testing/com.amit.neev',
+  googleGroupUrl: 'https://groups.google.com/g/anvaykosh-beta-testers',
   appStoreUrl: 'https://apps.apple.com/app/neev-sanctuary/id123456789',
   contactEmail: 'amit@devamit.co.in',
   author: 'Amit Chakraborty',

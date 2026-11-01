@@ -1,153 +1,321 @@
-import { ArrowUpRight, ShieldCheck, Sparkles, Heart, Home, Eye, Users } from 'lucide-react'
+import {
+  ArrowDownToLine,
+  ArrowUpRight,
+  Building,
+  CheckCircle2,
+  ExternalLink,
+  Eye,
+  Globe,
+  Heart,
+  Home,
+  ShieldCheck,
+  Shirt,
+  Smartphone,
+  Sparkles,
+  Truck,
+  Users,
+  Utensils,
+  Zap,
+} from 'lucide-react'
 
-interface EcosystemApp {
+export interface EcosystemApp {
   name: string
   tagline: string
   description: string
   icon: any
   badge: string
   status: string
+  packageId: string
   playUrl: string
+  betaUrl: string
+  apkUrl: string
+  siteUrl: string
 }
 
-const APPS: EcosystemApp[] = [
+export const ECOSYSTEM_APPS: EcosystemApp[] = [
   {
     name: 'Thrivefold',
-    tagline: 'Mindful Health & Alarm-Clock Routines',
-    description: 'On-device biomechanics, 12-hour AM/PM routine alarms, local RAG voice companion, and encrypted health records.',
+    tagline: 'Mindful Health & Biomechanics Companion',
+    description: 'On-device camera pose coaching, 12-hour AM/PM routine alarms, Health Connect sync, local RAG voice companion, and hardware Keystore encryption.',
     icon: Sparkles,
     badge: 'Flagship Health',
-    status: 'In Production (Google Play)',
+    status: 'Google Play Beta Track',
+    packageId: 'com.amit.thrivefold',
     playUrl: 'https://play.google.com/store/apps/details?id=com.amit.thrivefold',
-  },
-  {
-    name: 'HarmonyBloom',
-    tagline: "Women's Hormonal Harmony & Sanctuary",
-    description: 'Authentic sage-green cycle awareness, phase-tailored insights, private journal, and mindful wellbeing sanctuary.',
-    icon: Heart,
-    badge: "Women's Health",
-    status: 'In Production (Google Play)',
-    playUrl: 'https://play.google.com/store/apps/details?id=com.amit.harmonybloom',
-  },
-  {
-    name: 'Neev Sanctuary',
-    tagline: 'Private Family Operating System',
-    description: 'Sacred offline family spaces, child emergency beacon, schedules, spatial radar, and peer-to-peer sync.',
-    icon: Home,
-    badge: 'Family OS',
-    status: 'In Production (Google Play)',
-    playUrl: 'https://play.google.com/store/apps/details?id=com.amit.neev',
+    betaUrl: 'https://play.google.com/apps/testing/com.amit.thrivefold',
+    apkUrl: 'https://github.com/devamitch/thrivefold/releases',
+    siteUrl: 'https://thrivefold.devamit.co.in',
   },
   {
     name: 'Setu',
     tagline: 'Offline P2P Mesh & Identity Anchor',
-    description: 'Near-zero battery nearby discovery, Wi-Fi Aware peer transfers, and cryptographic federated identity.',
+    description: 'Near-zero battery nearby discovery, Wi-Fi Direct peer swarm transfers, cryptographic federated identity, and local-first privacy.',
     icon: ShieldCheck,
-    badge: 'Peer Mesh',
-    status: 'In Production (Google Play)',
+    badge: 'Flagship Mesh',
+    status: 'Google Play Beta Track',
+    packageId: 'com.amit.setu',
     playUrl: 'https://play.google.com/store/apps/details?id=com.amit.setu',
+    betaUrl: 'https://play.google.com/apps/testing/com.amit.setu',
+    apkUrl: 'https://github.com/devamitch/setu/releases',
+    siteUrl: 'https://setu.devamit.co.in',
+  },
+  {
+    name: 'HarmonyBloom',
+    tagline: "Women's Hormonal Harmony & Sanctuary",
+    description: 'Authentic sage-green cycle awareness, phase-tailored insights, private basal body temperature journal, and mindful wellbeing sanctuary.',
+    icon: Heart,
+    badge: "Women's Health",
+    status: 'Google Play Beta Track',
+    packageId: 'com.amit.harmonybloom',
+    playUrl: 'https://play.google.com/store/apps/details?id=com.amit.harmonybloom',
+    betaUrl: 'https://play.google.com/apps/testing/com.amit.harmonybloom',
+    apkUrl: 'https://github.com/devamitch/harmonybloom/releases',
+    siteUrl: 'https://harmonybloom.devamit.co.in',
+  },
+  {
+    name: 'Neev Sanctuary',
+    tagline: 'Private Family Operating System',
+    description: 'Sacred offline family spaces, multi-generational parenting rhythms, emergency radar maps, and encrypted cultural heirlooms.',
+    icon: Home,
+    badge: 'Family OS',
+    status: 'Google Play Beta Track',
+    packageId: 'com.amit.neev',
+    playUrl: 'https://play.google.com/store/apps/details?id=com.amit.neev',
+    betaUrl: 'https://play.google.com/apps/testing/com.amit.neev',
+    apkUrl: 'https://github.com/devamitch/neev/releases',
+    siteUrl: 'https://neevsanctuary.devamit.co.in',
   },
   {
     name: 'BlinkQuest',
     tagline: 'Vision Ergonomics & Blink Coach',
-    description: 'MediaPipe on-device blink rate tracking, screen fatigue breaks, and vision ergonomics for digital professionals.',
+    description: 'MediaPipe on-device blink rate tracking, screen fatigue breaks, and interactive vision ergonomics for digital professionals.',
     icon: Eye,
     badge: 'Vision Health',
-    status: 'In Production (Google Play)',
+    status: 'Google Play Beta Track',
+    packageId: 'com.amit.blinkquest',
     playUrl: 'https://play.google.com/store/apps/details?id=com.amit.blinkquest',
+    betaUrl: 'https://play.google.com/apps/testing/com.amit.blinkquest',
+    apkUrl: 'https://github.com/devamitch/blinkquest/releases',
+    siteUrl: 'https://blinkquest.devamit.co.in',
+  },
+  {
+    name: 'Ravuno',
+    tagline: 'Aura Arena & Combat Motion Coach',
+    description: 'Cyberpunk motion tracking, shadowboxing biomechanics, real-time audio combat coaching, and offline workout progression.',
+    icon: Zap,
+    badge: 'Combat Motion',
+    status: 'Google Play Beta Track',
+    packageId: 'com.amit.ravuno',
+    playUrl: 'https://play.google.com/store/apps/details?id=com.amit.ravuno',
+    betaUrl: 'https://play.google.com/apps/testing/com.amit.ravuno',
+    apkUrl: 'https://github.com/devamitch/ravuno/releases',
+    siteUrl: 'https://ravuno.devamit.co.in',
+  },
+  {
+    name: 'Haulwise',
+    tagline: 'UK Waste Clearance & Transport Fleet',
+    description: 'Licensed waste carrier marketplace, dynamic route dispatching, instant skip quotes, and zero-fly-tipping audit trails.',
+    icon: Truck,
+    badge: 'Transport & Logistics',
+    status: 'Google Play Beta Track',
+    packageId: 'com.amit.haulwise',
+    playUrl: 'https://play.google.com/store/apps/details?id=com.amit.haulwise',
+    betaUrl: 'https://play.google.com/apps/testing/com.amit.haulwise',
+    apkUrl: 'https://github.com/devamitch/haulwise/releases',
+    siteUrl: 'https://haulwise.devamit.co.in',
+  },
+  {
+    name: 'CrumbRush',
+    tagline: 'Artisanal Pizza & Cake Express',
+    description: 'Neighborhood bakery and gourmet pizzeria deliveries, batch dispatch routing, real-time courier tracking, and sweet tooth loyalty perks.',
+    icon: Utensils,
+    badge: 'Food Delivery',
+    status: 'Google Play Beta Track',
+    packageId: 'com.amit.crumbrush',
+    playUrl: 'https://play.google.com/store/apps/details?id=com.amit.crumbrush',
+    betaUrl: 'https://play.google.com/apps/testing/com.amit.crumbrush',
+    apkUrl: 'https://github.com/devamitch/crumbrush/releases',
+    siteUrl: 'https://crumbrush.devamit.co.in',
+  },
+  {
+    name: 'Stayora',
+    tagline: 'Boutique Hotel & Stay Booking',
+    description: 'Handpicked retreats, instant contactless check-ins, transparent price breakdown, and concierge travel itineraries.',
+    icon: Building,
+    badge: 'Hospitality',
+    status: 'Google Play Beta Track',
+    packageId: 'com.amit.stayora',
+    playUrl: 'https://play.google.com/store/apps/details?id=com.amit.stayora',
+    betaUrl: 'https://play.google.com/apps/testing/com.amit.stayora',
+    apkUrl: 'https://github.com/devamitch/stayora/releases',
+    siteUrl: 'https://stayora.devamit.co.in',
+  },
+  {
+    name: 'ThreadTry',
+    tagline: 'AR Virtual Fitting & Fashion Try-On',
+    description: 'Real-time on-device cloth simulation, body-contour drape scanning, designer wardrobe catalogs, and return-free shopping.',
+    icon: Shirt,
+    badge: 'AR Fashion',
+    status: 'Google Play Beta Track',
+    packageId: 'com.amit.threadtry',
+    playUrl: 'https://play.google.com/store/apps/details?id=com.amit.threadtry',
+    betaUrl: 'https://play.google.com/apps/testing/com.amit.threadtry',
+    apkUrl: 'https://github.com/devamitch/threadtry/releases',
+    siteUrl: 'https://threadtry.devamit.co.in',
   },
 ]
 
 export function EcosystemDirectorySection() {
   return (
     <section id="ecosystem" className="scroll-mt-24 py-16 px-4">
-      <div className="mx-auto max-w-[1140px] space-y-12">
+      <div className="mx-auto max-w-[1240px] space-y-12">
+        {/* Section Header */}
         <div className="text-center space-y-4">
-          <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--terracotta,#c46849)] block">
-            AnvayKosh Ecosystem (अन्वयकोश)
-          </span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-medium text-[var(--ink,#1c1917)] tracking-tight">
-            One Unified Offline-First Family of Apps
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 text-[var(--terracotta,#c46849)] text-xs font-semibold uppercase tracking-wider">
+            <Sparkles className="w-3.5 h-3.5" />
+            <span>AnvayKosh (अन्वयकोश) Master Ecosystem</span>
+          </div>
+          <h2 className="font-serif text-3xl sm:text-5xl font-medium text-[var(--ink,#1c1917)] tracking-tight">
+            Join Beta Testing &amp; Download APKs <br className="hidden sm:inline" />
+            <span className="italic text-[var(--terracotta,#c46849)]">for All 10 Ecosystem Apps</span>
           </h2>
-          <p className="max-w-[680px] mx-auto text-sm sm:text-base text-[var(--ink-secondary,#78716c)]">
-            Every application in the AnvayKosh ecosystem stores records in hardware-backed device keystores, operates
-            completely offline, and adheres to zero-secret exposure.
+          <p className="max-w-[760px] mx-auto text-sm sm:text-base text-[var(--ink-secondary,#78716c)] leading-relaxed">
+            Every application in the AnvayKosh ecosystem stores data locally with hardware-backed encryption, operates
+            without remote tracking, and is available for testing on Google Play or as direct release APKs.
           </p>
+
+          {/* Quick Group Action */}
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="https://groups.google.com/g/anvaykosh-beta-testers"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--terracotta,#c46849)] hover:bg-[#b05a3c] text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors"
+            >
+              <Users className="w-4 h-4" />
+              <span>Join AnvayKosh Google Testers Group (Pre-Approve All Apps)</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          </div>
         </div>
 
+        {/* 10 Apps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {APPS.map((app) => {
+          {ECOSYSTEM_APPS.map((app) => {
             const Icon = app.icon
             return (
               <div
                 key={app.name}
-                className="rounded-2xl border border-[var(--border-subtle,#e7e5e4)] bg-white p-6 flex flex-col justify-between hover:border-[var(--terracotta,#c46849)] transition-colors duration-200"
+                className="rounded-3xl border border-[var(--border-subtle,#e7e5e4)] bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-[var(--terracotta,#c46849)] transition-all duration-200 shadow-xs hover:shadow-md"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-10 h-10 rounded-xl bg-orange-50 flex items-center justify-center text-[var(--terracotta,#c46849)]">
-                      <Icon className="w-5 h-5" />
+                    <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-[var(--terracotta,#c46849)]">
+                      <Icon className="w-6 h-6" />
                     </div>
                     <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-stone-100 text-[var(--ink-secondary,#78716c)]">
                       {app.badge}
                     </span>
                   </div>
+
                   <div>
-                    <h3 className="font-serif text-xl font-medium text-[var(--ink,#1c1917)]">{app.name}</h3>
-                    <p className="text-xs font-medium text-[var(--terracotta,#c46849)] mt-0.5">{app.tagline}</p>
-                    <span className="inline-block mt-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
-                      {app.status}
-                    </span>
+                    <h3 className="font-serif text-2xl font-bold text-[var(--ink,#1c1917)]">{app.name}</h3>
+                    <p className="text-xs font-semibold text-[var(--terracotta,#c46849)] mt-0.5">{app.tagline}</p>
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="inline-block text-[10px] font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                        {app.status}
+                      </span>
+                      <code className="text-[10px] text-[var(--ink-muted,#a8a29e)] font-mono">
+                        {app.packageId}
+                      </code>
+                    </div>
                   </div>
+
                   <p className="text-xs sm:text-sm text-[var(--ink-secondary,#78716c)] leading-relaxed">
                     {app.description}
                   </p>
                 </div>
 
-                <div className="pt-6 border-t border-[var(--border-subtle,#e7e5e4)] mt-6">
-                  <a
-                    href={app.playUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--ink,#1c1917)] hover:text-[var(--terracotta,#c46849)] transition-colors"
-                  >
-                    <span>Google Play Track</span>
-                    <ArrowUpRight className="w-3.5 h-3.5" />
-                  </a>
+                {/* Direct Action Links */}
+                <div className="pt-6 border-t border-[var(--border-subtle,#e7e5e4)] mt-6 space-y-2.5">
+                  <div className="grid grid-cols-2 gap-2">
+                    <a
+                      href={app.playUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-semibold bg-stone-900 hover:bg-black text-white transition-colors"
+                    >
+                      <Smartphone className="w-3.5 h-3.5" />
+                      <span>Play Store</span>
+                    </a>
+                    <a
+                      href={app.betaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-semibold bg-[var(--terracotta,#c46849)] hover:bg-[#b05a3c] text-white transition-colors"
+                    >
+                      <CheckCircle2 className="w-3.5 h-3.5" />
+                      <span>Join Beta</span>
+                    </a>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    <a
+                      href={app.apkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1 px-3 py-2 rounded-xl text-[11px] font-medium bg-stone-100 hover:bg-stone-200 text-[var(--ink,#1c1917)] transition-colors"
+                    >
+                      <ArrowDownToLine className="w-3.5 h-3.5" />
+                      <span>Direct APK</span>
+                    </a>
+                    <a
+                      href={app.siteUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-1 px-3 py-2 rounded-xl text-[11px] font-medium bg-stone-100 hover:bg-stone-200 text-[var(--ink,#1c1917)] transition-colors"
+                    >
+                      <Globe className="w-3.5 h-3.5" />
+                      <span>App Site</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             )
           })}
+        </div>
 
-          {/* Join Beta Testing Community Card */}
-          <div className="rounded-2xl border border-dashed border-[var(--terracotta,#c46849)] bg-orange-50/50 p-6 flex flex-col justify-between">
-            <div className="space-y-4">
-              <div className="w-10 h-10 rounded-xl bg-[var(--terracotta,#c46849)] flex items-center justify-center text-white">
-                <Users className="w-5 h-5" />
-              </div>
-              <div>
-                <h3 className="font-serif text-xl font-medium text-[var(--ink,#1c1917)]">Beta Community</h3>
-                <p className="text-xs font-medium text-[var(--terracotta,#c46849)] mt-0.5">Google Groups Early Access</p>
-                <span className="inline-block mt-1 text-[10px] font-semibold uppercase tracking-wider text-amber-700 bg-amber-50 px-2 py-0.5 rounded">
-                  Open Community
-                </span>
-              </div>
-              <p className="text-xs sm:text-sm text-[var(--ink-secondary,#78716c)] leading-relaxed">
-                Join our verified Google Play Beta Testers group to receive early builds, shape ecosystem releases, and test offline cross-app sync.
-              </p>
-            </div>
+        {/* Global Beta Community Box */}
+        <div className="rounded-3xl border border-dashed border-[var(--terracotta,#c46849)] bg-orange-50/60 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 text-center md:text-left">
+            <h3 className="font-serif text-2xl font-bold text-[var(--ink,#1c1917)]">
+              One Google Group. Pre-Approval for All 10 Apps.
+            </h3>
+            <p className="text-xs sm:text-sm text-[var(--ink-secondary,#78716c)] max-w-2xl leading-relaxed">
+              Google Play closed testing requires approved tester group membership. By joining <strong className="text-[var(--ink,#1c1917)]">anvaykosh-beta-testers</strong> with your Android Play Store Gmail, you are instantly pre-approved to test Thrivefold, Setu, BlinkQuest, and the entire suite.
+            </p>
+          </div>
 
-            <div className="pt-6 border-t border-[var(--border-subtle,#e7e5e4)] mt-6">
-              <a
-                href="https://groups.google.com/g/anvaykosh-beta-testers"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--terracotta,#c46849)] hover:underline"
-              >
-                <span>Join anvaykosh-beta-testers</span>
-                <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
+          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+            <a
+              href="https://groups.google.com/g/anvaykosh-beta-testers"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[var(--terracotta,#c46849)] hover:bg-[#b05a3c] text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors"
+            >
+              <Users className="w-4 h-4" />
+              <span>Join anvaykosh-beta-testers</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+            <a
+              href="https://groups.google.com/g/setu-beta-testers"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 px-5 py-3 rounded-full bg-white border border-[var(--border-subtle,#e7e5e4)] hover:bg-stone-50 text-xs font-semibold text-[var(--ink,#1c1917)] transition-colors"
+            >
+              <span>setu-beta-testers</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
       </div>

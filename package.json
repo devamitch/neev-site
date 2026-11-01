@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build || next build",
     "start": "next start",
     "test:compliance": "node scripts/verify-compliance.mjs",
     "postinstall": "cp pnpm node_modules/.bin/pnpm 2>/dev/null && chmod +x node_modules/.bin/pnpm 2>/dev/null || true",

@@ -35,6 +35,32 @@ export function BetaSignupSection() {
             Join hundreds of multi-generational Indian families orchestrating shared parenting, daily rituals, and cultural legacies together.
           </p>
 
+          {/* Direct Play Store Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+            <a
+              href="https://play.google.com/store/apps/details?id=com.amit.neev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-stone-900 hover:bg-black text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors"
+            >
+              <span>Install on Google Play</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <a
+              href="https://play.google.com/apps/testing/com.amit.neev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[var(--terracotta,#c46849)] hover:bg-[#b05a3c] text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors"
+            >
+              <span>Join Google Play Beta</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+
+          <div className="text-xs text-[var(--ink-secondary)] mb-6">
+            Or request an invite for private testing / iOS:
+          </div>
+
           {submitted ? (
             <div className="rounded-3xl bg-[var(--pista-container)] p-6 text-center">
               <div className="w-10 h-10 rounded-full bg-[var(--pista)] text-white flex items-center justify-center mx-auto mb-3">
