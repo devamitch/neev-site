@@ -100,10 +100,10 @@ export const ECOSYSTEM_APPS: EcosystemApp[] = [
   },
   {
     name: 'Ravuno',
-    tagline: 'Aura Arena & Combat Motion Coach',
-    description: 'Cyberpunk motion tracking, shadowboxing biomechanics, real-time audio combat coaching, and offline workout progression.',
+    tagline: 'Hyperlocal Community Discovery',
+    description: 'Privacy-respecting neighborhood networks, local verified bulletin boards, civic announcements, and offline-first community feeds.',
     icon: Zap,
-    badge: 'Combat Motion',
+    badge: 'Hyperlocal',
     status: 'Google Play Beta Track',
     packageId: 'com.amit.ravuno',
     playUrl: 'https://play.google.com/store/apps/details?id=com.amit.ravuno',
@@ -113,10 +113,10 @@ export const ECOSYSTEM_APPS: EcosystemApp[] = [
   },
   {
     name: 'Haulwise',
-    tagline: 'UK Waste Clearance & Transport Fleet',
-    description: 'Licensed waste carrier marketplace, dynamic route dispatching, instant skip quotes, and zero-fly-tipping audit trails.',
+    tagline: 'Smart Fleet & Logistical Dispatch',
+    description: 'Intelligent multi-stop route optimization, offline-ready fuel economy analytics, load weight balance calculation, and dispatch dispatchers.',
     icon: Truck,
-    badge: 'Transport & Logistics',
+    badge: 'Logistics',
     status: 'Google Play Beta Track',
     packageId: 'com.amit.haulwise',
     playUrl: 'https://play.google.com/store/apps/details?id=com.amit.haulwise',
@@ -126,10 +126,10 @@ export const ECOSYSTEM_APPS: EcosystemApp[] = [
   },
   {
     name: 'CrumbRush',
-    tagline: 'Artisanal Pizza & Cake Express',
-    description: 'Neighborhood bakery and gourmet pizzeria deliveries, batch dispatch routing, real-time courier tracking, and sweet tooth loyalty perks.',
+    tagline: 'Culinary Artisan & Pantry Rhythm',
+    description: 'Zero-waste culinary inventory, pantry expiration tracker, sourdough fermentation timers, and offline recipe collections.',
     icon: Utensils,
-    badge: 'Food Delivery',
+    badge: 'Culinary Craft',
     status: 'Google Play Beta Track',
     packageId: 'com.amit.crumbrush',
     playUrl: 'https://play.google.com/store/apps/details?id=com.amit.crumbrush',
@@ -139,8 +139,8 @@ export const ECOSYSTEM_APPS: EcosystemApp[] = [
   },
   {
     name: 'Stayora',
-    tagline: 'Boutique Hotel & Stay Booking',
-    description: 'Handpicked retreats, instant contactless check-ins, transparent price breakdown, and concierge travel itineraries.',
+    tagline: 'Serene Hospitality & Retreat Management',
+    description: 'Boutique stay reservations, contactless on-device guest key management, mindful hospitality, and zero third-party commission booking.',
     icon: Building,
     badge: 'Hospitality',
     status: 'Google Play Beta Track',
@@ -171,7 +171,7 @@ export function EcosystemDirectorySection() {
       <div className="mx-auto max-w-[1240px] space-y-12">
         {/* Section Header */}
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100/80 text-[var(--terracotta,#c46849)] text-xs font-semibold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100/70 text-[var(--terracotta,#c46849)] text-xs font-semibold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>AnvayKosh (अन्वयकोश) Master Ecosystem</span>
           </div>
@@ -190,7 +190,7 @@ export function EcosystemDirectorySection() {
               href="https://groups.google.com/g/anvaykosh-beta-testers"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[var(--terracotta,#c46849)] hover:bg-[#b05a3c] text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[var(--terracotta,#c46849)] hover:bg-[#b05a3c] text-white text-xs sm:text-sm font-semibold transition-all active:scale-[0.98]"
             >
               <Users className="w-4 h-4" />
               <span>Join AnvayKosh Google Testers Group (Pre-Approve All Apps)</span>
@@ -199,21 +199,21 @@ export function EcosystemDirectorySection() {
           </div>
         </div>
 
-        {/* 10 Apps Grid */}
+        {/* 10 Apps Grid - Pure Flat Squircles, No Borders, No Shadows */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {ECOSYSTEM_APPS.map((app) => {
             const Icon = app.icon
             return (
               <div
                 key={app.name}
-                className="rounded-3xl border border-[var(--border-subtle,#e7e5e4)] bg-white p-6 sm:p-7 flex flex-col justify-between hover:border-[var(--terracotta,#c46849)] transition-all duration-200 shadow-xs hover:shadow-md"
+                className="rounded-3xl bg-[var(--surface2,#f6f3ee)] p-6 sm:p-7 flex flex-col justify-between transition-colors hover:bg-[var(--surface3,#eae4dc)]"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-2xl bg-orange-50 flex items-center justify-center text-[var(--terracotta,#c46849)]">
+                    <div className="w-12 h-12 rounded-2xl bg-[var(--surface,#ffffff)] flex items-center justify-center text-[var(--terracotta,#c46849)]">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-stone-100 text-[var(--ink-secondary,#78716c)]">
+                    <span className="text-[11px] font-semibold px-3 py-1 rounded-full bg-[var(--surface,#ffffff)] text-[var(--ink-secondary,#78716c)]">
                       {app.badge}
                     </span>
                   </div>
@@ -222,7 +222,7 @@ export function EcosystemDirectorySection() {
                     <h3 className="font-serif text-2xl font-bold text-[var(--ink,#1c1917)]">{app.name}</h3>
                     <p className="text-xs font-semibold text-[var(--terracotta,#c46849)] mt-0.5">{app.tagline}</p>
                     <div className="flex items-center gap-2 mt-2">
-                      <span className="inline-block text-[10px] font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
+                      <span className="inline-block text-[10px] font-semibold uppercase tracking-wider text-emerald-800 bg-emerald-100/70 px-2.5 py-0.5 rounded-full">
                         {app.status}
                       </span>
                       <code className="text-[10px] text-[var(--ink-muted,#a8a29e)] font-mono">
@@ -236,14 +236,14 @@ export function EcosystemDirectorySection() {
                   </p>
                 </div>
 
-                {/* Direct Action Links */}
-                <div className="pt-6 border-t border-[var(--border-subtle,#e7e5e4)] mt-6 space-y-2.5">
+                {/* Direct Action Links - Flat Squircles, No Borders, No Shadows */}
+                <div className="pt-6 mt-6 space-y-2.5">
                   <div className="grid grid-cols-2 gap-2">
                     <a
                       href={app.playUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-semibold bg-stone-900 hover:bg-black text-white transition-colors"
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-2xl text-xs font-semibold bg-stone-900 hover:bg-black text-white transition-all active:scale-[0.98]"
                     >
                       <Smartphone className="w-3.5 h-3.5" />
                       <span>Play Store</span>
@@ -252,7 +252,7 @@ export function EcosystemDirectorySection() {
                       href={app.betaUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-xl text-xs font-semibold bg-[var(--terracotta,#c46849)] hover:bg-[#b05a3c] text-white transition-colors"
+                      className="inline-flex items-center justify-center gap-1.5 px-3 py-2.5 rounded-2xl text-xs font-semibold bg-[var(--terracotta,#c46849)] hover:bg-[#b05a3c] text-white transition-all active:scale-[0.98]"
                     >
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       <span>Join Beta</span>
@@ -264,7 +264,7 @@ export function EcosystemDirectorySection() {
                       href={app.apkUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1 px-3 py-2 rounded-xl text-[11px] font-medium bg-stone-100 hover:bg-stone-200 text-[var(--ink,#1c1917)] transition-colors"
+                      className="inline-flex items-center justify-center gap-1 px-3 py-2 rounded-2xl text-[11px] font-semibold bg-[var(--surface,#ffffff)] hover:bg-stone-50 text-[var(--ink,#1c1917)] transition-all active:scale-[0.98]"
                     >
                       <ArrowDownToLine className="w-3.5 h-3.5" />
                       <span>Direct APK</span>
@@ -273,7 +273,7 @@ export function EcosystemDirectorySection() {
                       href={app.siteUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-1 px-3 py-2 rounded-xl text-[11px] font-medium bg-stone-100 hover:bg-stone-200 text-[var(--ink,#1c1917)] transition-colors"
+                      className="inline-flex items-center justify-center gap-1 px-3 py-2 rounded-2xl text-[11px] font-semibold bg-[var(--surface,#ffffff)] hover:bg-stone-50 text-[var(--ink,#1c1917)] transition-all active:scale-[0.98]"
                     >
                       <Globe className="w-3.5 h-3.5" />
                       <span>App Site</span>
@@ -285,8 +285,8 @@ export function EcosystemDirectorySection() {
           })}
         </div>
 
-        {/* Global Beta Community Box */}
-        <div className="rounded-3xl border border-dashed border-[var(--terracotta,#c46849)] bg-orange-50/60 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Global Beta Community Box - Flat Organic Squircle, Zero Borders, Zero Shadows */}
+        <div className="rounded-3xl bg-orange-100/50 p-8 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
             <h3 className="font-serif text-2xl font-bold text-[var(--ink,#1c1917)]">
               One Google Group. Pre-Approval for All 10 Apps.
@@ -301,7 +301,7 @@ export function EcosystemDirectorySection() {
               href="https://groups.google.com/g/anvaykosh-beta-testers"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[var(--terracotta,#c46849)] hover:bg-[#b05a3c] text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-[var(--terracotta,#c46849)] hover:bg-[#b05a3c] text-white text-xs sm:text-sm font-semibold transition-all active:scale-[0.98]"
             >
               <Users className="w-4 h-4" />
               <span>Join anvaykosh-beta-testers</span>
@@ -311,7 +311,7 @@ export function EcosystemDirectorySection() {
               href="https://groups.google.com/g/setu-beta-testers"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-5 py-3 rounded-full bg-white border border-[var(--border-subtle,#e7e5e4)] hover:bg-stone-50 text-xs font-semibold text-[var(--ink,#1c1917)] transition-colors"
+              className="inline-flex items-center gap-1.5 px-5 py-3.5 rounded-full bg-[var(--surface,#ffffff)] hover:bg-stone-100 text-xs font-semibold text-[var(--ink,#1c1917)] transition-all active:scale-[0.98]"
             >
               <span>setu-beta-testers</span>
               <ArrowUpRight className="w-3.5 h-3.5" />

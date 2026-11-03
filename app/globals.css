@@ -29,8 +29,8 @@
   --terracotta-subtle: rgba(218, 119, 86, 0.12);
 
   --dock: #192216;
-  --border: rgba(14, 30, 27, 0.07);
-  --border-strong: rgba(14, 30, 27, 0.12);
+  --border: transparent;
+  --border-strong: transparent;
 
   --font-serif: 'Playfair Display', 'Fraunces', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
@@ -68,6 +68,11 @@ body {
 }
 
 /* Zero shadow, zero border flat squircle cards with velvety porcelain depth */
+[class*="shadow-"],
+[class*="shadow\["] {
+  box-shadow: none !important;
+}
+
 .sanctuary-card {
   background-color: var(--surface);
   border: none !important;
