@@ -106,12 +106,12 @@ export function SiteFooter() {
               </p>
               <div className="pt-1">
                 <a
-                  href="https://devamit.co.in"
+                  href="https://amitchakraborty.dev"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[11px] font-medium text-[var(--terracotta)] hover:underline"
+                  className="inline-flex items-center gap-1 text-[11px] font-semibold text-[var(--terracotta)] hover:underline"
                 >
-                  <span>devamit.co.in</span>
+                  <span>amitchakraborty.dev</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>

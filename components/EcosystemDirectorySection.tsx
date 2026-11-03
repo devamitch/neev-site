@@ -318,6 +318,30 @@ export function EcosystemDirectorySection() {
             </a>
           </div>
         </div>
+
+        {/* Architect & Personal Entity Link for Google Search Authority */}
+        <div className="pt-2 text-center">
+          <p className="text-xs sm:text-sm text-[var(--ink-secondary,#78716c)]">
+            AnvayKosh Ecosystem architected &amp; engineered by{' '}
+            <a
+              href="https://amitchakraborty.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-[var(--ink,#1c1917)] hover:text-[var(--terracotta,#c46849)] underline underline-offset-4"
+            >
+              Amit Chakraborty (amitchakraborty.dev)
+            </a>{' '}
+            · Mobile Architect &amp; Systems Engineer ·{' '}
+            <a
+              href="https://amitchakraborty.dev/hire-react-native-architect-india"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--terracotta,#c46849)] hover:underline"
+            >
+              Remote Engineering &amp; Consulting
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   )

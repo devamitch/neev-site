@@ -16,7 +16,7 @@ export const siteConfig = {
   author: 'Amit Chakraborty',
   authorHandle: 'devamitch',
   authorRole: 'Founding Engineer & Principal Architect',
-  authorUrl: 'https://devamit.co.in',
+  authorUrl: 'https://amitchakraborty.dev',
   githubUrl: 'https://github.com/devamitch',
   githubRepoUrl: 'https://github.com/devamitch/neev-site',
   xUrl: 'https://x.com/devamitch',
