@@ -35,8 +35,11 @@ export function HeroSection() {
             Harmonize family life <span className="italic text-[var(--terracotta)] font-normal">right at home.</span>
           </h1>
 
-          <p className="mt-7 max-w-[540px] text-[17px] leading-8 text-[var(--ink-secondary)] sm:text-[19px]">
-            Neev coordinates shared parenting, sacred festival panchang, and elder care across generations. Sync seamlessly with Google Calendar and Tasks, while family memories remain encrypted on your personal devices.
+          <p className="mt-7 max-w-[560px] text-[17px] leading-8 text-[var(--ink-secondary)] sm:text-[19px]">
+            Neev Sanctuary is an offline-first private family operating system for Android. 
+            Designed for multi-generational families, Neev coordinates shared parenting rituals, 
+            sacred festival panchang, and emergency family maps without third-party ad tracking. 
+            All family milestones and memories are protected by hardware Keystore encryption and stored purely on member devices.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
