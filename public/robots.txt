@@ -32,4 +32,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://neevsanctuary.devamit.co.in/sitemap.xml
+Sitemap: https://neev.devamit.co.in/sitemap.xml

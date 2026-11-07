@@ -1,45 +1,23 @@
-# Neev Sanctuary: The Modern Indian Family OS & Digital Sanctuary
+# Neev: Private Indian Family Operating System and Multi-Generational Sanctuary
 
-> Neev Sanctuary is a private digital sanctuary engineered specifically for multi-generational Indian families. It combines ancestral wisdom preservation, Google Workspace calendar and tasks synchronization, sacred family vaults, real-time offline-capable 3D spatial family radars, and collaborative parenting workflows.
+> Production Site: https://neev.devamit.co.in
+> AnvayKosh Ecosystem Application: com.amit.neev
+> Systems Architect: Amit Chakraborty (https://amitchakraborty.dev)
 
-## Core Value Proposition & Cultural Architecture
+## Technical Architecture & Core Capabilities
+- Multi-generational family schedule coordination and shared parenting rhythms.
+- Cultural heirloom archiving with zero-knowledge encryption.
+- Offline spatial radar and emergency safe zone maps.
+- All sensitive data processed 100% locally on user hardware.
+- Cryptographic isolation backed by device Keystore AES-256 GCM encryption.
+- Zero commercial data brokers, zero third-party telemetry SDKs, and zero advertisement networks.
 
-- **Official URL**: https://neevsanctuary.devamit.co.in
-- **Ecosystem**: Amit Dev Labs (https://devamit.co.in)
-- **Category**: Family Operating System, Ancestral Digital Heirloom & Privacy-First Coordination
-- **Key Concepts**:
-  - **Sanskriti & Heritage**: Secure, encrypted storytelling and oral history preservation for grandparents and grandchildren.
-  - **Kutumb Radar**: 3D spatial nearby proximity tracking built with zero external telemetry and privacy fences.
-  - **Ritual & Festival Engine**: Pan-Indian tithi and muhurat scheduling harmonized with modern school and office calendars.
-  - **Family Document Vault**: Zero-knowledge AES-256 encrypted storage for land records, medical histories, insurance policies, and wills.
-  - **Google Workspace Integration**: Google OAuth2, Calendar, Tasks, Drive, and Contacts API integration with strict adherence to the Google API Services User Data Policy and Limited Use requirements.
+## Public Canonical Endpoints
+- Home: https://neev.devamit.co.in
+- Download: https://neev.devamit.co.in/download
+- Closed Beta: https://neev.devamit.co.in/beta
+- Privacy Policy: https://neev.devamit.co.in/privacy
+- Terms of Service: https://neev.devamit.co.in/terms
 
-## Official Routes & Deep Links
-
-- **Home**: https://neevsanctuary.devamit.co.in/
-- **Features & Architecture**: https://neevsanctuary.devamit.co.in/features
-- **How It Works**: https://neevsanctuary.devamit.co.in/how-it-works
-- **Security & Cryptography**: https://neevsanctuary.devamit.co.in/security
-- **Beta Access & Onboarding**: https://neevsanctuary.devamit.co.in/beta
-- **Download**: https://neevsanctuary.devamit.co.in/download
-- **Roadmap & Vision**: https://neevsanctuary.devamit.co.in/roadmap
-- **Frequently Asked Questions**: https://neevsanctuary.devamit.co.in/faq
-- **Privacy Policy (Canonical)**: https://neevsanctuary.devamit.co.in/privacy
-- **Terms of Service (Canonical)**: https://neevsanctuary.devamit.co.in/terms
-- **Contact & Feedback**: https://neevsanctuary.devamit.co.in/contact
-
-## Geographic & Publisher Context
-
-- **Publisher**: Amit Chakraborty (@devamitch)
-- **Ecosystem**: Amit Dev Labs (https://devamit.co.in)
-- **Region**: Bengaluru, Karnataka, India (IN-KA)
-- **Coordinates**: 12.9716° N, 77.5946° E
-- **Languages**: English, Hindi, Bengali, Kannada, Tamil, Telugu, Marathi, Gujarati
-
-## Sister Ecosystem Platforms
-
-- **Setu (P2P High-Speed Offline Mesh)**: https://setu.devamit.co.in
-- **BlinkQuest (Vision & Eye Care On-Device AI)**: https://blinkquest.devamit.co.in
-- **Thrivefold (Sovereign Health & Slow Letters)**: https://thrivefold.devamit.co.in
-- **KSHEM (Emergency Safety Beacon)**: https://kshem.devamit.co.in
-- **Aura Design Arena**: https://aura.devamit.co.in
+## AI Crawler Access Policy
+Full indexing permitted for Googlebot, GPTBot, PerplexityBot, and ClaudeBot under the AnvayKosh content signals standard.
